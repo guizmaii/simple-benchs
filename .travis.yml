@@ -5,6 +5,10 @@ language: scala
 scala:
   - 2.12.10
 script:
+  - git clone https://github.com/simplesourcing/simplesource-examples
+  - cd simplesource-examples
+  - mvn install
+  - cd ..
   - docker-compose up
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling:test
   - docker-compose down

@@ -1,11 +1,13 @@
-package computerdatabase
+package io.simplesource.benchs.it
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
-import scala.language.postfixOps
-
 class BasicSimulation extends Simulation {
+
+  import BenchConfigs._
+
+  val toto = kafkaBrokers
 
   val httpProtocol = http
     .baseUrl("http://computer-database.gatling.io") // Here is the root for all relative URLs

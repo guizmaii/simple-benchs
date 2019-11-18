@@ -5,8 +5,8 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 lazy val gatling = (
   (version: String) =>
     Seq(
-      "io.gatling.highcharts" % "gatling-charts-highcharts" % version % Test,
-      "io.gatling"            % "gatling-test-framework"    % version % Test
+      "io.gatling.highcharts" % "gatling-charts-highcharts" % version % "test,it",
+      "io.gatling"            % "gatling-test-framework"    % version % "test,it"
     )
   )("3.3.1")
 
@@ -18,4 +18,8 @@ lazy val root = (project in file("."))
 lazy val benchs =
   project
     .enablePlugins(GatlingPlugin)
-    .settings(libraryDependencies ++= gatling)
+    .settings(resolvers += Resolver.mavenLocal)
+    .settings(libraryDependencies ++= Seq(
+      "io.simplesource" % "user" % "0.1.0-SNAPSHOT",
+      "com.typesafe" % "config" % "1.4.0"
+    ) ++ gatling)
