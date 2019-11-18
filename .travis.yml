@@ -4,6 +4,9 @@ services:
 language: scala
 scala:
   - 2.12.10
+addons:
+  hosts:
+    - broker
 script:
   - git clone https://github.com/simplesourcing/simplesource-examples
   - cd simplesource-examples

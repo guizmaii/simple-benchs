@@ -1,26 +1,26 @@
 package io.simplesource.benchs.it
 
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._
+import io.simplesource.api.{CommandAPI, CommandId}
+import io.simplesource.data.Sequence
+import io.simplesource.example.user.domain.{UserCommand, UserKey}
 
 class BasicSimulation extends Simulation {
 
-  import BenchConfigs._
+  val key              = new UserKey("user2345")
+  val firstName        = "Bob"
+  val lastName         = "Dubois"
 
-  val toto = kafkaBrokers
+  val commandApi: CommandAPI[UserKey, UserCommand] = BenchConfigs.startApp()
 
-  val httpProtocol = http
-    .baseUrl("http://computer-database.gatling.io") // Here is the root for all relative URLs
-    .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8") // Here are the common headers
-    .acceptEncodingHeader("gzip, deflate")
-    .acceptLanguageHeader("en-US,en;q=0.5")
-    .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0")
+  val request: CommandAPI.Request[UserKey, UserCommand] =
+    new CommandAPI.Request[UserKey, UserCommand](
+      CommandId.random,
+      key,
+      Sequence.first,
+      new UserCommand.InsertUser(firstName, lastName)
+    )
 
-  val scn = scenario("Scenario Name") // A scenario is a chain of requests and pauses
-    .exec(http("request_1")
-      .get("/"))
-    .pause(7) // Note that Gatling has recorder real time pauses
-
-  setUp(scn.inject(atOnceUsers(1)).protocols(httpProtocol))
+  commandApi.publishCommand(request)
 
 }
