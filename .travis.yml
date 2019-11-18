@@ -9,10 +9,9 @@ script:
   - cd simplesource-examples
   - mvn install
   - cd ..
-  - docker-compose up
+  - docker-compose up -d --force-recreate --renew-anon-volumes
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling:test
-  - docker-compose down
-  - docker-compose up
+  - docker-compose up -d --force-recreate --renew-anon-volumes
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
 jdk:
   - openjdk8
