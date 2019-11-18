@@ -12,6 +12,8 @@ lazy val gatling = (
 
 lazy val root = (project in file("."))
   .settings(name := "simple-benchs")
+  .aggregate(benchs)
+  .dependsOn(benchs)
 
 lazy val benchs =
   project
