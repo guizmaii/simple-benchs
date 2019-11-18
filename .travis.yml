@@ -1,9 +1,14 @@
 sudo: false
+services:
+  - docker
 language: scala
 scala:
   - 2.12.10
 script:
+  - docker-compose up
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling:test
+  - docker-compose down
+  - docker-compose up
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
 jdk:
   - openjdk8
