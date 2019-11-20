@@ -11,7 +11,6 @@ import io.simplesource.data.{ FutureResult, NonEmptyList, Result }
 import io.simplesource.kafka.dsl.EventSourcedApp
 
 import scala.collection.JavaConverters._
-import scala.util.{ Failure, Success }
 
 /**
  * Inspire by `io.gatling.core.action.RequestAction`
@@ -22,9 +21,6 @@ abstract class SimpleSourceAction[A](
   ctx: ScenarioContext,
   override final val next: Action
 ) extends ExitableAction { self =>
-  // FIXME: Maybe not the best EC to use?
-  import scala.concurrent.ExecutionContext.Implicits._
-
   def sendRequest(requestName: String, session: Session): FutureResult[CommandError, A]
 
   override final def name: String             = actionName
@@ -36,33 +32,31 @@ abstract class SimpleSourceAction[A](
   override final def execute(session: Session): Unit = recover(session) {
     import io.gatling.commons.util.Throwables._
 
-    import scala.compat.java8.FutureConverters._
-
-    val requestStartDate = clock.nowMillis
-
     for {
       resolvedRequestName <- requestName(session)
     } yield {
-      sendRequest(resolvedRequestName, session).future().toScala.onComplete { response =>
-        response match {
-          case Failure(e) => statsEngine.reportUnbuildableRequest(session, resolvedRequestName, e.detailedMessage)
-          case Success(result: Result[CommandError, A]) =>
-            val requestEndDate = clock.nowMillis
+      val requestStartDate = clock.nowMillis
 
-            val errorMessage: Option[String] = result.fold(
-              (errors: NonEmptyList[CommandError]) => Some(errors.map(_.getMessage()).toList.asScala.mkString(" - ")): Option[String],
-              _ => None: Option[String]
-            )
+      sendRequest(resolvedRequestName, session).future().whenComplete { (result: Result[CommandError, A], e: Throwable) =>
+        if (e ne null) {
+          statsEngine.reportUnbuildableRequest(session, resolvedRequestName, e.detailedMessage)
+        } else {
+          val requestEndDate = clock.nowMillis
 
-            statsEngine.logResponse(
-              session,
-              resolvedRequestName,
-              startTimestamp = requestStartDate,
-              endTimestamp = requestEndDate,
-              if (result.isSuccess) OK else KO,
-              None,
-              errorMessage
-            )
+          val errorMessage: Option[String] = result.fold(
+            (errors: NonEmptyList[CommandError]) => Some(errors.map(_.getMessage()).toList.asScala.mkString(" - ")): Option[String],
+            _ => None: Option[String]
+          )
+
+          statsEngine.logResponse(
+            session = session,
+            requestName = resolvedRequestName,
+            startTimestamp = requestStartDate,
+            endTimestamp = requestEndDate,
+            status = if (result.isSuccess) OK else KO,
+            responseCode = None,
+            message = errorMessage
+          )
         }
 
         if (ctx.throttled) {

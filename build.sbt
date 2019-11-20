@@ -29,7 +29,6 @@ lazy val benchs =
         "io.simplesource"        % "simplesource-command-kafka" % "0.2.8-SNAPSHOT",
         "io.simplesource"        % "user"                       % "0.1.0-SNAPSHOT",
         "com.typesafe"           % "config"                     % "1.4.0",
-        "org.scala-lang.modules" %% "scala-java8-compat"        % "0.9.0"
       ) ++ gatling
     )
 
