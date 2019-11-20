@@ -7,12 +7,17 @@ scala:
 addons:
   hosts:
     - broker
+jdk:
+  - openjdk8
+  - openjdk11
 
+# I need to update Maven because the `--no-transfer-progress` option is not available on the pre-installed version.
 before_install:
   - wget http://apache.mirror.gtcomm.net/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
   - tar xzvf apache-maven-3.6.2-bin.tar.gz
   - export PATH=`pwd`/apache-maven-3.6.2/bin:$PATH
   - mvn -v
+
 script:
   - git clone https://github.com/simplesourcing/simplesource-examples
   - cd simplesource-examples
@@ -29,9 +34,7 @@ script:
   - docker-compose down
   - docker-compose up -d --force-recreate --renew-anon-volumes
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
-jdk:
-  - openjdk8
-  - openjdk11
+
 
 # Comes from: https://github.com/http4s/http4s/blob/master/.travis.yml#L109
 cache:
