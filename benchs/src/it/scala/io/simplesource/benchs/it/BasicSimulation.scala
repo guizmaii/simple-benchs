@@ -28,7 +28,7 @@ class BasicSimulation extends Simulation {
 
   val scn: ScenarioBuilder =
     scenario("Scenario Name") // A scenario is a chain of requests and pauses
-      .exec(stream("request_1").publishCommand("command_1")(commandApi(aggregateName), request))
+      .exec(stream("request_1").publishCommand("command_1")(commandApi("client_id_1", aggregateName), request))
       .pause(5) // Note that Gatling has recorder real time pauses
 
   setUp(scn.inject(atOnceUsers(1)).protocols(simpleSourceProtocol.build()))
