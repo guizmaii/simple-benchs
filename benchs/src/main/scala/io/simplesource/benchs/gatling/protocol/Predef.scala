@@ -31,7 +31,7 @@ trait SimpleSourceDsl {
     app => app.createCommandAPI(clientId, aggregateName)
 }
 
-final class Stream(actionName: String) { source =>
+final class Stream(actionName: String) {
   def publishCommand[K, C](
     requestName: Expression[String]
   )(commandAPI: EventSourcedApp => CommandAPI[K, C], request: CommandAPI.Request[K, C]): ActionBuilder =
@@ -86,6 +86,7 @@ object SimpleSourceSessions {
   final def props(protocol: SimpleSourceProtocol): Props = Props(new SimpleSourceSessions(protocol))
 }
 
+// TODO Jules: Find what this is used for.
 class SimpleSourceSessions(protocol: SimpleSourceProtocol) extends BaseActor {
   override def receive: Receive = {
     case _ =>
