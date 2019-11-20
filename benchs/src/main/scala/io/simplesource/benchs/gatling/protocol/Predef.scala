@@ -1,18 +1,16 @@
 package io.simplesource.benchs.gatling.protocol
 
-import akka.actor.{ ActorRef, Props }
-import io.gatling.commons.util.Clock
+import akka.actor.{ActorRef, Props}
 import io.gatling.core.CoreComponents
 import io.gatling.core.action.Action
 import io.gatling.core.action.builder.ActionBuilder
 import io.gatling.core.akka.BaseActor
 import io.gatling.core.config.GatlingConfiguration
-import io.gatling.core.protocol.{ Protocol, ProtocolComponents, ProtocolKey }
-import io.gatling.core.session.{ Expression, Session }
-import io.gatling.core.stats.StatsEngine
+import io.gatling.core.protocol.{Protocol, ProtocolComponents, ProtocolKey}
+import io.gatling.core.session.{Expression, Session}
 import io.gatling.core.structure.ScenarioContext
-import io.simplesource.api.{ CommandAPI, CommandError, CommandId }
-import io.simplesource.data.{ FutureResult, Sequence }
+import io.simplesource.api.{CommandAPI, CommandError, CommandId}
+import io.simplesource.data.{FutureResult, Sequence}
 import io.simplesource.kafka.dsl.EventSourcedApp
 import io.simplesource.kafka.dsl.EventSourcedApp.EventSourcedAppBuilder
 
@@ -112,10 +110,4 @@ object SimpleSourceProtocol {
         SimpleSourceComponents(protocol, sessions)
       }
     }
-}
-
-final case class SimpleSourceActionContext(clock: Clock, sessions: ActorRef, statsEngine: StatsEngine, next: Action)
-
-class SimpleSourceActionBuilder extends ActionBuilder {
-  override def build(ctx: ScenarioContext, next: Action): Action = ???
 }
