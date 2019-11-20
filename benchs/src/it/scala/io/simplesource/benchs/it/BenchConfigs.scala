@@ -2,7 +2,6 @@ package io.simplesource.benchs.it
 
 import java.util.Optional
 
-import com.typesafe.config.{Config, ConfigFactory}
 import io.simplesource.example.user.domain.{User, UserCommand, UserEvent, UserKey}
 import io.simplesource.kafka.dsl.AggregateBuilder
 import io.simplesource.kafka.dsl.EventSourcedApp.EventSourcedAppBuilder
@@ -13,11 +12,6 @@ import io.simplesource.kafka.serialization.json.JsonOptionalGenericMapper.jsonOp
 import io.simplesource.kafka.util.PrefixResourceNamingStrategy
 
 object BenchConfigs {
-
-  private val config: Config = ConfigFactory.load("benchs.conf")
-  private val benchConfigs   = config.getConfig("io.simplesource.benchs")
-
-  val kafkaBrokers: String = benchConfigs.getString("kafka.brokers")
 
   // The following code is copied from here:
   //  - https://github.com/simplesourcing/simplesource-examples/blob/master/examples/user/src/main/java/io/simplesource/example/user/json/UserJsonRunner.java
@@ -33,7 +27,7 @@ object BenchConfigs {
     new EventSourcedAppBuilder().withKafkaConfig { builder: Builder =>
       builder
         .withKafkaApplicationId("benchs")
-        .withKafkaBootstrap(BenchConfigs.kafkaBrokers)
+        .withKafkaBootstrap("localhost:9092")
         .build()
     }.addAggregate { builder: AggregateBuilder[UserKey, UserCommand, UserEvent, Optional[User]] =>
       builder
