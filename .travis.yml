@@ -4,29 +4,7 @@
 #   - https://github.com/sormuras/bach#install-jdksh
 #   - https://github.com/sormuras/sormuras.github.io/blob/master/.travis.yml
 
-sudo: false
-services:
-  - docker
-language: scala
-scala:
-  - 2.12.10
-addons:
-  hosts:
-    - broker
-jobs:
-  include:
-    - stage: 🚀 AdoptOpenJDK 11
-      # AdoptOpenJDK -- https://adoptopenjdk.net
-      env: JDK=adoptopenjdk11 + HotSpot
-      script: source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
-    - stage: 🚀 AdoptOpenJDK 8
-      # AdoptOpenJDK -- https://adoptopenjdk.net
-      env: JDK=adoptopenjdk8 + HotSpot
-      script: source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk8?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
-before_script:
-  - unset -v _JAVA_OPTIONS
-  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-script:
+.test: &test
   - git clone https://github.com/simplesourcing/simplesource-examples
   - cd simplesource-examples
   - mvn install
@@ -43,6 +21,37 @@ script:
   - docker-compose up -d --force-recreate --renew-anon-volumes
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
 
+sudo: false
+services:
+  - docker
+language: scala
+scala:
+  - 2.12.10
+addons:
+  hosts:
+    - broker
+
+before_script:
+  - unset -v _JAVA_OPTIONS
+  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+
+jobs:
+  include:
+    - stage: 🚀 AdoptOpenJDK 11
+      # AdoptOpenJDK -- https://adoptopenjdk.net
+      env: JDK=adoptopenjdk11 + HotSpot
+      script:
+       - source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
+       - java version
+       - *test
+
+    - stage: 🚀 AdoptOpenJDK 8
+      # AdoptOpenJDK -- https://adoptopenjdk.net
+      env: JDK=adoptopenjdk8 + HotSpot
+      script:
+        - source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk8?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
+        - java version
+        - *test
 
 # Comes from: https://github.com/http4s/http4s/blob/master/.travis.yml#L109
 cache:
