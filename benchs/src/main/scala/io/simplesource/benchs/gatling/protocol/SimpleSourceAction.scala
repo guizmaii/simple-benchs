@@ -39,7 +39,7 @@ abstract class SimpleSourceAction[A](
 
       sendRequest(resolvedRequestName, session).future().whenComplete { (result: Result[CommandError, A], e: Throwable) =>
         if (e ne null) {
-          statsEngine.reportUnbuildableRequest(session, resolvedRequestName, e.detailedMessage)
+          statsEngine.logCrash(session, resolvedRequestName, e.detailedMessage)
         } else {
           val requestEndDate = clock.nowMillis
 
