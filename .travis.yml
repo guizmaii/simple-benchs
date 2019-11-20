@@ -1,3 +1,9 @@
+# Use the AdoptOpenJDK JVMs
+# More info on how I install them in Travis:
+#   - https://sormuras.github.io/blog/2018-06-22-jdk-matrix.html
+#   - https://github.com/sormuras/bach#install-jdksh
+#   - https://github.com/sormuras/sormuras.github.io/blob/master/.travis.yml
+
 sudo: false
 services:
   - docker
@@ -7,6 +13,19 @@ scala:
 addons:
   hosts:
     - broker
+jobs:
+  include:
+    - stage: 🚀 AdoptOpenJDK 11
+      # AdoptOpenJDK -- https://adoptopenjdk.net
+      env: JDK=adoptopenjdk11 + HotSpot
+      script: source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
+    - stage: 🚀 AdoptOpenJDK 8
+      # AdoptOpenJDK -- https://adoptopenjdk.net
+      env: JDK=adoptopenjdk8 + HotSpot
+      script: source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk8?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
+before_script:
+  - unset -v _JAVA_OPTIONS
+  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 script:
   - git clone https://github.com/simplesourcing/simplesource-examples
   - cd simplesource-examples
@@ -23,9 +42,7 @@ script:
   - docker-compose down
   - docker-compose up -d --force-recreate --renew-anon-volumes
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
-jdk:
-  - openjdk8
-  - openjdk11
+
 
 # Comes from: https://github.com/http4s/http4s/blob/master/.travis.yml#L109
 cache:
