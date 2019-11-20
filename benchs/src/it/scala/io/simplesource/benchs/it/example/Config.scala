@@ -1,4 +1,4 @@
-package io.simplesource.benchs.it
+package io.simplesource.benchs.it.example
 
 import java.util.Optional
 
@@ -11,7 +11,7 @@ import io.simplesource.kafka.serialization.json.JsonGenericMapper.jsonDomainMapp
 import io.simplesource.kafka.serialization.json.JsonOptionalGenericMapper.jsonOptionalDomainMapper
 import io.simplesource.kafka.util.PrefixResourceNamingStrategy
 
-object BenchConfigs {
+object Config {
 
   // The following code is copied from here:
   //  - https://github.com/simplesourcing/simplesource-examples/blob/master/examples/user/src/main/java/io/simplesource/example/user/json/UserJsonRunner.java
