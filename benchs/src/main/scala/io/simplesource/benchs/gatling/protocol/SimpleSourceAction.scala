@@ -43,7 +43,6 @@ abstract class SimpleSourceAction[A](
         if (e ne null) {
           statsEngine.logCrash(session, resolvedRequestName, e.detailedMessage)
         } else {
-
           val errorMessage: Option[String] = result.fold(
             (errors: NonEmptyList[CommandError]) => Some(errors.map(_.getMessage()).toList.asScala.mkString(" - ")): Option[String],
             _ => None: Option[String]
