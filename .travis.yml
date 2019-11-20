@@ -10,12 +10,12 @@ addons:
 script:
   - git clone https://github.com/simplesourcing/simplesource-examples
   - cd simplesource-examples
-  - mvn install -q
+  - mvn install --no-transfer-progress
   - cd ..
   - git clone https://github.com/guizmaii/simplesource.git
   - cd simplesource
   - git checkout eventsourceapp_builder
-  - mvn install -q
+  - mvn install --no-transfer-progress
   - cd ..
   - docker-compose down
   - docker-compose up -d --force-recreate --renew-anon-volumes
