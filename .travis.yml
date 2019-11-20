@@ -12,6 +12,12 @@ script:
   - cd simplesource-examples
   - mvn install
   - cd ..
+  - git clone git@github.com:guizmaii/simplesource.git
+  - cd simplesource
+  - git checkout eventsourceapp_builder
+  - mvn install
+  - cd ..
+  - docker-compose down
   - docker-compose up -d --force-recreate --renew-anon-volumes
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling:test
   - docker-compose down
