@@ -43,7 +43,7 @@ jobs:
       script:
        - source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk11?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
        - java -version
-        <<: *test
+       - <<: *test
 
     - stage: 🚀 AdoptOpenJDK 8
       # AdoptOpenJDK -- https://adoptopenjdk.net
@@ -51,7 +51,7 @@ jobs:
       script:
         - source ./install-jdk.sh --url 'https://api.adoptopenjdk.net/v2/binary/releases/openjdk8?openjdk_impl=hotspot&os=linux&arch=x64&release=latest&heap_size=normal&type=jdk'
         - java -version
-        <<: *test
+        - <<: *test
 
 # Comes from: https://github.com/http4s/http4s/blob/master/.travis.yml#L109
 cache:
