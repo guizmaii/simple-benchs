@@ -33,58 +33,34 @@ trait SimpleSourceDsl {
     app => app.getCommandAPISet(aggregateName).getCommandAPI(aggregateName)
 }
 
-final class Stream(name: String) { source =>
+final class Stream(actionName: String) { source =>
   def publishCommand[K, C](
-    id: Expression[String]
+    requestName: Expression[String]
   )(commandAPI: EventSourcedApp => CommandAPI[K, C], request: CommandAPI.Request[K, C]): ActionBuilder =
-    (context: ScenarioContext, nextAction: Action) =>
-      new SimpleSourceAction[CommandId] {
-        override val requestName: Expression[String] = id
-        override val next: Action                    = nextAction
-        override val name: String                    = source.name
-        override val ctx: ScenarioContext            = context
-
-        override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, CommandId] = {
-          val app = ctx.protocolComponentsRegistry.components(SimpleSourceProtocol.simpleSourceProtocolKey).protocol.app
-
+    (ctx: ScenarioContext, next: Action) =>
+      new SimpleSourceAction[CommandId](actionName, requestName, ctx, next) {
+        override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, CommandId] =
           commandAPI(app).publishCommand(request)
-        }
       }
 
   def queryCommandResult[K, C](
-    id: Expression[String]
+    requestName: Expression[String]
   )(commandAPI: EventSourcedApp => CommandAPI[K, C], commandId: CommandId, timeout: FiniteDuration): ActionBuilder =
-    (context: ScenarioContext, nextAction: Action) =>
-      new SimpleSourceAction[Sequence] {
-        override val requestName: Expression[String] = id
-        override val next: Action                    = nextAction
-        override val name: String                    = source.name
-        override val ctx: ScenarioContext            = context
-
-        override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, Sequence] = {
-          import scala.compat.java8.DurationConverters._
-          val app = ctx.protocolComponentsRegistry.components(SimpleSourceProtocol.simpleSourceProtocolKey).protocol.app
-
+    (ctx: ScenarioContext, next: Action) =>
+      new SimpleSourceAction[Sequence](actionName, requestName, ctx, next) {
+        import scala.compat.java8.DurationConverters._
+        override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, Sequence] =
           commandAPI(app).queryCommandResult(commandId, timeout.toJava)
-        }
       }
 
   def publishAndQueryCommand[K, C](
-    id: Expression[String]
+    requestName: Expression[String]
   )(commandAPI: EventSourcedApp => CommandAPI[K, C], request: CommandAPI.Request[K, C], timeout: FiniteDuration): ActionBuilder =
-    (context: ScenarioContext, nextAction: Action) =>
-      new SimpleSourceAction[Sequence] {
-        override val requestName: Expression[String] = id
-        override val next: Action                    = nextAction
-        override val name: String                    = source.name
-        override val ctx: ScenarioContext            = context
-
-        override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, Sequence] = {
-          import scala.compat.java8.DurationConverters._
-          val app = ctx.protocolComponentsRegistry.components(SimpleSourceProtocol.simpleSourceProtocolKey).protocol.app
-
+    (ctx: ScenarioContext, next: Action) =>
+      new SimpleSourceAction[Sequence](actionName, requestName, ctx, next) {
+        import scala.compat.java8.DurationConverters._
+        override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, Sequence] =
           commandAPI(app).publishAndQueryCommand(request, timeout.toJava)
-        }
       }
 }
 
