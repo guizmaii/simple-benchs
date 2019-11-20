@@ -27,7 +27,7 @@ trait SimpleSourceDsl {
   def stream(name: String): Stream = new Stream(name)
 
   /**
-   * Returns a function for a better type inference at the use location.
+   * Returns a function for a better type inference at the use site.
    */
   def commandApi[K, C](aggregateName: String): EventSourcedApp => CommandAPI[K, C] =
     app => app.getCommandAPISet(aggregateName).getCommandAPI(aggregateName)
