@@ -24,9 +24,8 @@ script:
   - cd simplesource-examples
   - mvn install --no-transfer-progress
   - cd ..
-  - git clone https://github.com/guizmaii/simplesource.git
+  - git clone https://github.com/simplesourcing/simplesource.git
   - cd simplesource
-  - git checkout eventsourceapp_builder
   - mvn install --no-transfer-progress
   - cd ..
   - docker-compose down
