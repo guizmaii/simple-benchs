@@ -12,7 +12,7 @@ import io.simplesource.data.{ FutureResult, NonEmptyList, Result }
 import scala.collection.JavaConverters._
 
 /**
- * Inspire by `io.gatling.core.action.RequestAction`
+ * Inspired by `io.gatling.core.action.RequestAction`
  */
 abstract class SimpleSourceAction[K, C, P, A](
   actionName: String,
