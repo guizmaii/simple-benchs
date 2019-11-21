@@ -60,7 +60,7 @@ final class Stream(actionName: String) {
       new SimpleSourceAction[K, C, (CommandId, Duration), Sequence](actionName, requestName, ctx, next) {
         import scala.compat.java8.DurationConverters._
 
-        private val tupled: ((CommandId, Duration)) => FutureResult[CommandError, Sequence] = (commandAPI.queryCommandResult _).tupled
+        private final val tupled: ((CommandId, Duration)) => FutureResult[CommandError, Sequence] = (commandAPI.queryCommandResult _).tupled
 
         override def sendRequest(
           requestName: String,
