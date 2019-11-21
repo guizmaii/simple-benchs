@@ -131,7 +131,8 @@ object SimpleSourceProtocol {
       override def protocolClass: Class[Protocol] = classOf[SimpleSourceProtocol].asInstanceOf[Class[Protocol]]
 
       // TODO Jules: Can we provide defaults for SimpleSource ?
-      override def defaultProtocolValue(configuration: GatlingConfiguration): SimpleSourceProtocol = ???
+      override def defaultProtocolValue(configuration: GatlingConfiguration): SimpleSourceProtocol =
+        throw new IllegalStateException("Can't provide a default value for SimpleSource")
 
       override def newComponents(
         coreComponents: CoreComponents
