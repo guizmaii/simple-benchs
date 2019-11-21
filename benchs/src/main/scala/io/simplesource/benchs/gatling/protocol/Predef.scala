@@ -1,16 +1,16 @@
 package io.simplesource.benchs.gatling.protocol
 
-import akka.actor.{ActorRef, Props}
+import akka.actor.{ ActorRef, Props }
 import io.gatling.core.CoreComponents
 import io.gatling.core.action.Action
 import io.gatling.core.action.builder.ActionBuilder
 import io.gatling.core.akka.BaseActor
 import io.gatling.core.config.GatlingConfiguration
-import io.gatling.core.protocol.{Protocol, ProtocolComponents, ProtocolKey}
-import io.gatling.core.session.{Expression, Session}
+import io.gatling.core.protocol.{ Protocol, ProtocolComponents, ProtocolKey }
+import io.gatling.core.session.{ Expression, Session }
 import io.gatling.core.structure.ScenarioContext
-import io.simplesource.api.{CommandAPI, CommandError, CommandId}
-import io.simplesource.data.{FutureResult, Sequence}
+import io.simplesource.api.{ CommandAPI, CommandError, CommandId }
+import io.simplesource.data.{ FutureResult, Sequence }
 import io.simplesource.kafka.dsl.EventSourcedApp
 
 import scala.concurrent.duration.FiniteDuration
@@ -64,14 +64,14 @@ final case class SimpleSourceProtocolBuilder(
   def build(): SimpleSourceProtocol = {
     assert(app.nonEmpty, "The app is empty")
 
-    SimpleSourceProtocol(app.get)
+    SimpleSourceProtocol { app.get.start(); app.get }
   }
 }
 
 final case class SimpleSourceProtocol(app: EventSourcedApp) extends Protocol
 
 final case class SimpleSourceComponents(protocol: SimpleSourceProtocol, sessions: ActorRef) extends ProtocolComponents {
-  override def onStart: Session => Session = session => { protocol.app.start(); session }
+  override def onStart: Session => Session = ProtocolComponents.NoopOnStart
   override def onExit: Session => Unit     = ProtocolComponents.NoopOnExit
 }
 
