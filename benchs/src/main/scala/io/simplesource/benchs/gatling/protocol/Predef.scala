@@ -12,7 +12,6 @@ import io.gatling.core.structure.ScenarioContext
 import io.simplesource.api.{CommandAPI, CommandError, CommandId}
 import io.simplesource.data.{FutureResult, Sequence}
 import io.simplesource.kafka.dsl.EventSourcedApp
-import io.simplesource.kafka.dsl.EventSourcedApp.EventSourcedAppBuilder
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -23,62 +22,56 @@ trait SimpleSourceDsl {
     SimpleSourceProtocolBuilder(configuration)
 
   def stream(name: String): Stream = new Stream(name)
-
-  /**
-   * Returns a function for a better type inference at the use site.
-   */
-  def commandApi[K, C](clientId: String, aggregateName: String): EventSourcedApp => CommandAPI[K, C] =
-    app => app.createCommandAPI(clientId, aggregateName)
 }
 
 final class Stream(actionName: String) {
   def publishCommand[K, C](
     requestName: Expression[String]
-  )(commandAPI: EventSourcedApp => CommandAPI[K, C], request: CommandAPI.Request[K, C]): ActionBuilder =
+  )(commandAPI: CommandAPI[K, C], request: CommandAPI.Request[K, C]): ActionBuilder =
     (ctx: ScenarioContext, next: Action) =>
       new SimpleSourceAction[CommandId](actionName, requestName, ctx, next) {
         override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, CommandId] =
-          commandAPI(app).publishCommand(request)
+          commandAPI.publishCommand(request)
       }
 
   def queryCommandResult[K, C](
     requestName: Expression[String]
-  )(commandAPI: EventSourcedApp => CommandAPI[K, C], commandId: CommandId, timeout: FiniteDuration): ActionBuilder =
+  )(commandAPI: CommandAPI[K, C], commandId: CommandId, timeout: FiniteDuration): ActionBuilder =
     (ctx: ScenarioContext, next: Action) =>
       new SimpleSourceAction[Sequence](actionName, requestName, ctx, next) {
         import scala.compat.java8.DurationConverters._
         override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, Sequence] =
-          commandAPI(app).queryCommandResult(commandId, timeout.toJava)
+          commandAPI.queryCommandResult(commandId, timeout.toJava)
       }
 
   def publishAndQueryCommand[K, C](
     requestName: Expression[String]
-  )(commandAPI: EventSourcedApp => CommandAPI[K, C], request: CommandAPI.Request[K, C], timeout: FiniteDuration): ActionBuilder =
+  )(commandAPI: CommandAPI[K, C], request: CommandAPI.Request[K, C], timeout: FiniteDuration): ActionBuilder =
     (ctx: ScenarioContext, next: Action) =>
       new SimpleSourceAction[Sequence](actionName, requestName, ctx, next) {
         import scala.compat.java8.DurationConverters._
         override def sendRequest(requestName: String, session: Session): FutureResult[CommandError, Sequence] =
-          commandAPI(app).publishAndQueryCommand(request, timeout.toJava)
+          commandAPI.publishAndQueryCommand(request, timeout.toJava)
       }
 }
 
 final case class SimpleSourceProtocolBuilder(
   private val configuration: GatlingConfiguration,
-  private val app: Option[EventSourcedAppBuilder] = None
+  private val app: Option[EventSourcedApp] = None
 ) {
-  def withApp(app: EventSourcedAppBuilder): SimpleSourceProtocolBuilder = copy(app = Some(app))
+  def withApp(app: EventSourcedApp): SimpleSourceProtocolBuilder = copy(app = Some(app))
 
   def build(): SimpleSourceProtocol = {
     assert(app.nonEmpty, "The app is empty")
 
-    SimpleSourceProtocol(app.get.start())
+    SimpleSourceProtocol(app.get)
   }
 }
 
 final case class SimpleSourceProtocol(app: EventSourcedApp) extends Protocol
 
 final case class SimpleSourceComponents(protocol: SimpleSourceProtocol, sessions: ActorRef) extends ProtocolComponents {
-  override def onStart: Session => Session = ProtocolComponents.NoopOnStart
+  override def onStart: Session => Session = session => { protocol.app.start(); session }
   override def onExit: Session => Unit     = ProtocolComponents.NoopOnExit
 }
 

@@ -30,11 +30,11 @@ class SimulationExample extends Simulation {
 
   val scn: ScenarioBuilder =
     scenario("Scenario 0") // A scenario is a chain of requests and pauses
-      .exec(stream("Request 1").publishCommand("Command 1")(commandApi("client_id_1", aggregateName), request))
+      .exec(stream("Request 1").publishCommand("Command 1")(commandAPI, request))
       .pause(5) // Note that Gatling has recorder real time pauses
-      .exec(stream("Request 2").publishCommand("Command 2")(commandApi("client_id_2", aggregateName), request))
+      .exec(stream("Request 2").publishCommand("Command 2")(commandAPI, request))
       .pause(5) // Note that Gatling has recorder real time pauses
-      .exec(stream("Request 3").publishCommand("Command 3")(commandApi("client_id_3", aggregateName), request))
+      .exec(stream("Request 3").publishCommand("Command 3")(commandAPI, request))
 
   setUp(scn.inject(rampUsers(100) during 5.minute).protocols(simpleSourceProtocol.build()))
 }
