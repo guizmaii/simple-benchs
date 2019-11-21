@@ -29,7 +29,7 @@ trait SimpleSourceDsl {
 }
 
 final class Stream(actionName: String) {
-  def publishCommand[K, C, R](
+  def publishCommand[K, C](
     requestName: Expression[String]
   )(commandAPI: CommandAPI[K, C], key: K, command: C): ActionBuilder =
     new ActionBuilder {
