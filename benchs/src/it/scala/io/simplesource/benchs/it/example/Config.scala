@@ -47,7 +47,7 @@ object Config {
         .build()
     }
 
-  val commandAPI: CommandAPI[UserKey, UserCommand] = client.createCommandApi { builder: CommandAPIBuilder[UserKey, UserCommand] =>
+  val commandAPI: CommandAPI[UserKey, UserCommand] = client.createCommandAPI { builder: CommandAPIBuilder[UserKey, UserCommand] =>
     builder
       .withClientId("benchsClient")
       .withName(aggregateName)
