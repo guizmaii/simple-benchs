@@ -2,6 +2,7 @@ package io.simplesource.benchs.it.example
 
 import java.util.Optional
 
+import io.simplesource.api.CommandAPI
 import io.simplesource.example.user.domain.{ User, UserCommand, UserEvent, UserKey }
 import io.simplesource.kafka.client.{ CommandAPIBuilder, EventSourcedClient }
 import io.simplesource.kafka.dsl.KafkaConfig.Builder
@@ -46,7 +47,7 @@ object Config {
         .build()
     }
 
-  val commandAPI = client.createCommandApi { builder: CommandAPIBuilder[UserKey, UserCommand] =>
+  val commandAPI: CommandAPI[UserKey, UserCommand] = client.createCommandApi { builder: CommandAPIBuilder[UserKey, UserCommand] =>
     builder
       .withClientId("benchsClient")
       .withName(aggregateName)
