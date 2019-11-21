@@ -43,7 +43,7 @@ final class Stream(actionName: String) {
             request: CommandAPI.Request[K, C]
           ): FutureResult[CommandError, CommandId] = commandAPI.publishCommand(request)
 
-          override def newRequest(): Request[K, C] = {
+          override def requestParamsGen(): Request[K, C] = {
             val r = new CommandAPI.Request[K, C](CommandId.random, key, Sequence.position(safeSequence.getAndIncrement()), command)
 
             logger.warn(s"============== R: $r")
@@ -68,7 +68,7 @@ final class Stream(actionName: String) {
           request: (CommandId, Duration)
         ): FutureResult[CommandError, Sequence] = tupled(request)
 
-        override def newRequest(): (CommandId, Duration) = (commandId, timeout.toJava)
+        override def requestParamsGen(): (CommandId, Duration) = (commandId, timeout.toJava)
       }
 
   def publishAndQueryCommand[K, C](
@@ -87,7 +87,7 @@ final class Stream(actionName: String) {
             request: CommandAPI.Request[K, C]
           ): FutureResult[CommandError, Sequence] = commandAPI.publishAndQueryCommand(request, timeout.toJava)
 
-          override def newRequest(): CommandAPI.Request[K, C] =
+          override def requestParamsGen(): CommandAPI.Request[K, C] =
             new CommandAPI.Request[K, C](CommandId.random, key, Sequence.position(safeSequence.getAndIncrement()), command)
         }
     }
