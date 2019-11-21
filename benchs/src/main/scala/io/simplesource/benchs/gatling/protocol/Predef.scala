@@ -3,11 +3,9 @@ package io.simplesource.benchs.gatling.protocol
 import java.time.Duration
 import java.util.concurrent.atomic.AtomicLong
 
-import akka.actor.Props
 import io.gatling.core.CoreComponents
 import io.gatling.core.action.Action
 import io.gatling.core.action.builder.ActionBuilder
-import io.gatling.core.akka.BaseActor
 import io.gatling.core.config.GatlingConfiguration
 import io.gatling.core.protocol.{Protocol, ProtocolComponents, ProtocolKey}
 import io.gatling.core.session.{Expression, Session}
@@ -108,23 +106,6 @@ final case class SimpleSourceProtocolBuilder(
 
 final case class SimpleSourceProtocol(app: EventSourcedApp) extends Protocol
 
-final case class SimpleSourceComponents(protocol: SimpleSourceProtocol) extends ProtocolComponents {
-  override def onStart: Session => Session = ProtocolComponents.NoopOnStart
-  override def onExit: Session => Unit     = ProtocolComponents.NoopOnExit
-}
-
-object SimpleSourceSessions {
-  final def props(protocol: SimpleSourceProtocol): Props = Props(new SimpleSourceSessions(protocol))
-}
-
-// TODO Jules: Find what this is used for.
-class SimpleSourceSessions(protocol: SimpleSourceProtocol) extends BaseActor {
-  override def receive: Receive = {
-    case _ =>
-      val _ = protocol
-  }
-}
-
 object SimpleSourceProtocol {
   final val simpleSourceProtocolKey: ProtocolKey[SimpleSourceProtocol, SimpleSourceComponents] =
     new ProtocolKey[SimpleSourceProtocol, SimpleSourceComponents] {
@@ -137,4 +118,9 @@ object SimpleSourceProtocol {
       override def newComponents(coreComponents: CoreComponents): SimpleSourceProtocol => SimpleSourceComponents =
         protocol => SimpleSourceComponents(protocol)
     }
+}
+
+final case class SimpleSourceComponents(protocol: SimpleSourceProtocol) extends ProtocolComponents {
+  override def onStart: Session => Session = ProtocolComponents.NoopOnStart
+  override def onExit: Session => Unit     = ProtocolComponents.NoopOnExit
 }
