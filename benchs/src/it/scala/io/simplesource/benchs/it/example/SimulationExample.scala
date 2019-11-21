@@ -16,25 +16,21 @@ class SimulationExample extends Simulation {
   val firstName = "Bob"
   val lastName  = "Dubois"
 
-  val request: CommandAPI.Request[UserKey, UserCommand] =
-    new CommandAPI.Request[UserKey, UserCommand](
-      CommandId.random,
-      key,
-      Sequence.first,
-      new UserCommand.InsertUser(firstName, lastName)
-    )
+  val command: UserCommand = new UserCommand.InsertUser(firstName, lastName)
 
   import io.simplesource.benchs.gatling.protocol.Predef._
 
   val simpleSourceProtocol: SimpleSourceProtocolBuilder = simpleSource.withApp(app)
 
+  def newRequest() = new CommandAPI.Request(CommandId.random, key, Sequence.first(), command)
+
   val scn: ScenarioBuilder =
     scenario("Scenario 0") // A scenario is a chain of requests and pauses
-      .exec(stream("Request 1").publishCommand("Command 1")(commandAPI, request))
+      .exec(stream("Request 1").publishCommand("Command 1")(commandAPI, key, command))
       .pause(5) // Note that Gatling has recorder real time pauses
-      .exec(stream("Request 2").publishCommand("Command 2")(commandAPI, request))
+      .exec(stream("Request 2").publishCommand("Command 2")(commandAPI, key, command))
       .pause(5) // Note that Gatling has recorder real time pauses
-      .exec(stream("Request 3").publishCommand("Command 3")(commandAPI, request))
+      .exec(stream("Request 3").publishCommand("Command 3")(commandAPI, key, command))
 
-  setUp(scn.inject(rampUsers(100) during 5.minute).protocols(simpleSourceProtocol.build()))
+  setUp(scn.inject(rampUsers(10000) during 2.minutes).protocols(simpleSourceProtocol.build()))
 }

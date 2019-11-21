@@ -14,13 +14,14 @@ import scala.collection.JavaConverters._
 /**
  * Inspire by `io.gatling.core.action.RequestAction`
  */
-abstract class SimpleSourceAction[A](
+abstract class SimpleSourceAction[K, C, R, A](
   actionName: String,
   requestName: Expression[String],
   ctx: ScenarioContext,
   override final val next: Action
-) extends ExitableAction { self =>
-  def sendRequest(requestName: String, session: Session): FutureResult[CommandError, A]
+) extends ExitableAction {
+  def newRequest(): R
+  def sendRequest(requestName: String, session: Session, request: R): FutureResult[CommandError, A]
 
   override final def name: String             = actionName
   override final def clock: Clock             = ctx.coreComponents.clock
@@ -32,9 +33,10 @@ abstract class SimpleSourceAction[A](
     for {
       resolvedRequestName <- requestName(session)
     } yield {
+      val request          = newRequest()
       val requestStartDate = clock.nowMillis
 
-      sendRequest(resolvedRequestName, session).future().whenComplete { (result: Result[CommandError, A], e: Throwable) =>
+      sendRequest(resolvedRequestName, session, request).future().whenComplete { (result: Result[CommandError, A], e: Throwable) =>
         val requestEndDate = clock.nowMillis
 
         if (e ne null) {
