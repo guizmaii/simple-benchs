@@ -1,26 +1,27 @@
 package io.simplesource.benchs.gatling.protocol
 
-import io.gatling.commons.stats.{KO, OK}
+import io.gatling.commons.stats.{ KO, OK }
 import io.gatling.commons.util.Clock
-import io.gatling.core.action.{Action, ExitableAction}
-import io.gatling.core.session.{Expression, Session}
+import io.gatling.core.action.{ Action, ExitableAction }
+import io.gatling.core.session.{ Expression, Session }
 import io.gatling.core.stats.StatsEngine
 import io.gatling.core.structure.ScenarioContext
 import io.simplesource.api.CommandError
-import io.simplesource.data.{FutureResult, NonEmptyList, Result}
+import io.simplesource.data.{ FutureResult, NonEmptyList, Result }
 
 import scala.collection.JavaConverters._
 
 /**
  * Inspire by `io.gatling.core.action.RequestAction`
  */
-abstract class SimpleSourceAction[A](
+abstract class SimpleSourceAction[K, C, P, A](
   actionName: String,
   requestName: Expression[String],
   ctx: ScenarioContext,
   override final val next: Action
-) extends ExitableAction { self =>
-  def sendRequest(requestName: String, session: Session): FutureResult[CommandError, A]
+) extends ExitableAction {
+  def requestParamsGen(): P
+  def sendRequest(requestName: String, session: Session, requestParameters: P): FutureResult[CommandError, A]
 
   override final def name: String             = actionName
   override final def clock: Clock             = ctx.coreComponents.clock
@@ -32,9 +33,10 @@ abstract class SimpleSourceAction[A](
     for {
       resolvedRequestName <- requestName(session)
     } yield {
+      val parameters: P    = requestParamsGen()
       val requestStartDate = clock.nowMillis
 
-      sendRequest(resolvedRequestName, session).future().whenComplete { (result: Result[CommandError, A], e: Throwable) =>
+      sendRequest(resolvedRequestName, session, parameters).future().whenComplete { (result: Result[CommandError, A], e: Throwable) =>
         val requestEndDate = clock.nowMillis
 
         if (e ne null) {
