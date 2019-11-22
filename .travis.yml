@@ -29,11 +29,9 @@ script:
   - git checkout update_simplesource
   - mvn install --no-transfer-progress
   - cd ..
-  - docker-compose down
-  - docker-compose up -d --force-recreate --renew-anon-volumes
+  - ./boot-cluster.sh
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling:test
-  - docker-compose down
-  - docker-compose up -d --force-recreate --renew-anon-volumes
+  - boot-cluster.sh
   - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
 
 
