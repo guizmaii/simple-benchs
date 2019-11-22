@@ -14,7 +14,8 @@ class SimulationExample extends Simulation {
   import Config._
   import scala.compat.java8.DurationConverters._
 
-  val command: () => UserCommand.InsertUser = () => new UserCommand.InsertUser("Bob", "Dubois")
+  val newRandokmUserKey: () => UserKey              = () => new UserKey(UUID.randomUUID().toString)
+  val constantCommand: () => UserCommand.InsertUser = () => new UserCommand.InsertUser("Bob", "Dubois")
 
   import io.simplesource.benchs.gatling.protocol.Predef._
 
@@ -22,19 +23,19 @@ class SimulationExample extends Simulation {
 
   val scn: ScenarioBuilder =
     scenario("Scenario 0") // A scenario is a chain of requests and pauses
-      .exec(
+      /*.exec(
         stream("Stream 1")
-          .publishCommand("Command 1: publishCommand")(commandAPI, () => new UserKey(UUID.randomUUID().toString), command, Sequence.first)
-      )
+          .publishCommand("Command 1: publishCommand")(commandAPI, newrandokmUserKey, constantCommand, Sequence.first)
+      )*/
       .exec(
         stream("Stream 2").publishAndQueryCommand("Command 2: publishAndQueryCommand")(
           commandAPI,
-          () => new UserKey(UUID.randomUUID().toString),
-          command,
+          newRandokmUserKey,
+          constantCommand,
           Sequence.first,
-          10.seconds.toJava
+          20.seconds.toJava
         )
       )
 
-  setUp(scn.inject(rampUsers(100000) during 30.seconds).protocols(simpleSourceProtocol.build()))
+  setUp(scn.inject(rampUsers(100000) during 1.minute).protocols(simpleSourceProtocol.build()))
 }
