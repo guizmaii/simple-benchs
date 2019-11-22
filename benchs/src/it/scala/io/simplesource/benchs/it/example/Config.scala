@@ -18,7 +18,7 @@ object Config {
   //  - https://github.com/simplesourcing/simplesource-examples/blob/master/examples/user/src/main/java/io/simplesource/example/user
 
   private val bootstrapServers = "localhost:9092"
-  private val schemaRegistry   = "localhost:8081"
+  private val schemaRegistry   = "http://schema_registry:8081"
 
   private val jsonAggregateName: String                                                                 = "json-benchs-aggregate"
   private val jsonNamingStrategy: PrefixResourceNamingStrategy                                          = new PrefixResourceNamingStrategy("user_json_")
