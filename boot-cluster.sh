@@ -10,7 +10,7 @@ rm -rf /tmp/kafka-streams/
 docker system prune --volumes -f
 
 # https://stackoverflow.com/a/39296583
-if [[ -z "${CI}" ]]; then
+if [[ "${CI}" ]]; then
   docker-compose up > /dev/null
 else
   docker-compose up

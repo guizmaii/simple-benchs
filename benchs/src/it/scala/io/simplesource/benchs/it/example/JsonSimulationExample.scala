@@ -24,10 +24,10 @@ class JsonSimulationExample extends Simulation {
 
   val scn: ScenarioBuilder =
     scenario("JSON Scenario 0") // A scenario is a chain of requests and pauses
-      .exec(
+      /*.exec(
         stream("JSON Stream 1")
           .publishCommand("JSON Command 1: publishCommand")(commandAPI, newRandomUserKey, constantCommand, Sequence.first)
-      )
+      )*/
       .exec {
         import scala.compat.java8.DurationConverters._
 
