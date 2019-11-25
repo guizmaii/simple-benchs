@@ -205,7 +205,7 @@ Resources:
 
         yum update -y
 
-        yum install python3.7 -y
+        yum install python3.7 git htop nmap -y
 
         yum install java-1.8.0-openjdk-devel -y
 
