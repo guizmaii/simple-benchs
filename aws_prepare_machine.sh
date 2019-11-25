@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 curl -s "https://get.sdkman.io" | bash
 source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
 sdk install java 8.0.232.hs-adpt

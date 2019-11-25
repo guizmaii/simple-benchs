@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 git clone https://github.com/simplesourcing/simplesource.git
 cd simplesource
