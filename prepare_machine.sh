@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -e
+set -o pipefail
+set -x
+
 git clone https://github.com/simplesourcing/simplesource.git
 cd simplesource
 mvn install --no-transfer-progress
