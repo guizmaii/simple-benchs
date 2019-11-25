@@ -10,7 +10,7 @@ import io.simplesource.example.user.domain.{ UserCommand, UserKey }
 
 import scala.concurrent.duration._
 
-class JsonSimulationExample extends Simulation {
+class AvroSimulationExample extends Simulation {
   import Config._
 
   val newRandomUserKey: () => UserKey               = () => new UserKey(UUID.randomUUID().toString)
@@ -18,20 +18,20 @@ class JsonSimulationExample extends Simulation {
 
   import io.simplesource.benchs.gatling.protocol.Predef._
 
-  val (app, commandAPI) = jsonAppAndClient
+  val (app, commandAPI) = avroAppAndClient
 
   val simpleSourceProtocol: SimpleSourceProtocolBuilder = simpleSource.withApp(app)
 
   val scn: ScenarioBuilder =
-    scenario("JSON Scenario 0") // A scenario is a chain of requests and pauses
+    scenario("Avro Scenario 0") // A scenario is a chain of requests and pauses
       .exec(
-        stream("JSON Stream 1")
-          .publishCommand("JSON Command 1: publishCommand")(commandAPI, newRandomUserKey, constantCommand, Sequence.first)
+        stream("Avro Stream 1")
+          .publishCommand("Avro Command 1: publishCommand")(commandAPI, newRandomUserKey, constantCommand, Sequence.first)
       )
       .exec {
         import scala.compat.java8.DurationConverters._
 
-        stream("JSON Stream 2").publishAndQueryCommand("JSON Command 2: publishAndQueryCommand")(
+        stream("Avro Stream 2").publishAndQueryCommand("Avro Command 2: publishAndQueryCommand")(
           commandAPI,
           newRandomUserKey,
           constantCommand,
