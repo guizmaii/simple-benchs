@@ -240,6 +240,7 @@ Resources:
         EOF
 
         sudo yum clean all
+
         sudo yum install confluent-platform-2.12 -y
 
         # ------------------------ #
