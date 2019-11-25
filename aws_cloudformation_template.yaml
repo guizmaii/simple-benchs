@@ -346,6 +346,16 @@ Resources:
           FromPort: 0
           IpProtocol: tcp
           ToPort: 65535
+        - CidrIp: 10.0.0.0/19
+          Description: Public VPC to MSK Kafka
+          FromPort: 9094
+          ToPort: 9094
+          IpProtocol: tcp
+        - CidrIp: 10.0.0.0/19
+          Description: Public VPC to MSK Zookeeper
+          FromPort: 2181
+          ToPort: 2181
+          IpProtocol: tcp
       VpcId:
         Ref: SimpleBenchsPrivateVpc
     Metadata:
