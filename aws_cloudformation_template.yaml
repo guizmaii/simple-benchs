@@ -1,6 +1,6 @@
 ---
 Resources:
-  Simplesourcing93B4A445:
+  SimpleBenchsPrivateVpc:
     Type: AWS::EC2::VPC
     Properties:
       CidrBlock: 10.0.0.0/16
@@ -9,329 +9,329 @@ Resources:
       InstanceTenancy: default
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/Resource
-  SimplesourcingPublicSubnet1Subnet72E8431F:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/Resource
+  SimpleBenchsPublicSubnet1Subnet:
     Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: 10.0.0.0/19
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       AvailabilityZone: ap-southeast-2a
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1
         - Key: aws-cdk:subnet-name
           Value: Public
         - Key: aws-cdk:subnet-type
           Value: Public
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1/Subnet
-  SimplesourcingPublicSubnet1RouteTableA87FABAF:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1/Subnet
+  SimpleBenchsPublicSubnet1RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1/RouteTable
-  SimplesourcingPublicSubnet1RouteTableAssociation3BE66DC0:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1/RouteTable
+  SimpleBenchsPublicSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPublicSubnet1RouteTableA87FABAF
+        Ref: SimpleBenchsPublicSubnet1RouteTable
       SubnetId:
-        Ref: SimplesourcingPublicSubnet1Subnet72E8431F
+        Ref: SimpleBenchsPublicSubnet1Subnet
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1/RouteTableAssociation
-  SimplesourcingPublicSubnet1DefaultRoute36AB287C:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1/RouteTableAssociation
+  SimpleBenchsPublicSubnet1DefaultRoute:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPublicSubnet1RouteTableA87FABAF
+        Ref: SimpleBenchsPublicSubnet1RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId:
-        Ref: SimplesourcingIGW2A39E80E
+        Ref: SimpleBenchsIGW
     DependsOn:
-      - SimplesourcingVPCGW74E06C51
+      - SimpleBenchsVPCGW
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1/DefaultRoute
-  SimplesourcingPublicSubnet1EIP44D83496:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1/DefaultRoute
+  SimpleBenchsPublicSubnet1EIP:
     Type: AWS::EC2::EIP
     Properties:
       Domain: vpc
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1/EIP
-  SimplesourcingPublicSubnet1NATGateway212D6362:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1/EIP
+  SimpleBenchsPublicSubnet1NATGateway:
     Type: AWS::EC2::NatGateway
     Properties:
       AllocationId:
         Fn::GetAtt:
-          - SimplesourcingPublicSubnet1EIP44D83496
+          - SimpleBenchsPublicSubnet1EIP
           - AllocationId
       SubnetId:
-        Ref: SimplesourcingPublicSubnet1Subnet72E8431F
+        Ref: SimpleBenchsPublicSubnet1Subnet
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet1/NATGateway
-  SimplesourcingPublicSubnet2Subnet6C94F9DB:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet1/NATGateway
+  SimpleBenchsPublicSubnet2Subnet:
     Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: 10.0.32.0/19
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       AvailabilityZone: ap-southeast-2b
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet2
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet2
         - Key: aws-cdk:subnet-name
           Value: Public
         - Key: aws-cdk:subnet-type
           Value: Public
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet2/Subnet
-  SimplesourcingPublicSubnet2RouteTableE668D7E4:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet2/Subnet
+  SimpleBenchsPublicSubnet2RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet2
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet2
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet2/RouteTable
-  SimplesourcingPublicSubnet2RouteTableAssociation642557FB:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet2/RouteTable
+  SimpleBenchsPublicSubnet2RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPublicSubnet2RouteTableE668D7E4
+        Ref: SimpleBenchsPublicSubnet2RouteTable
       SubnetId:
-        Ref: SimplesourcingPublicSubnet2Subnet6C94F9DB
+        Ref: SimpleBenchsPublicSubnet2Subnet
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet2/RouteTableAssociation
-  SimplesourcingPublicSubnet2DefaultRoute4B9F156F:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet2/RouteTableAssociation
+  SimpleBenchsPublicSubnet2DefaultRoute:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPublicSubnet2RouteTableE668D7E4
+        Ref: SimpleBenchsPublicSubnet2RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId:
-        Ref: SimplesourcingIGW2A39E80E
+        Ref: SimpleBenchsIGW
     DependsOn:
-      - SimplesourcingVPCGW74E06C51
+      - SimpleBenchsVPCGW
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet2/DefaultRoute
-  SimplesourcingPublicSubnet3Subnet46358BA5:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet2/DefaultRoute
+  SimpleBenchsPublicSubnet3Subnet:
     Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: 10.0.64.0/19
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       AvailabilityZone: ap-southeast-2c
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet3
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet3
         - Key: aws-cdk:subnet-name
           Value: Public
         - Key: aws-cdk:subnet-type
           Value: Public
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet3/Subnet
-  SimplesourcingPublicSubnet3RouteTable26192350:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet3/Subnet
+  SimpleBenchsPublicSubnet3RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet3
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet3
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet3/RouteTable
-  SimplesourcingPublicSubnet3RouteTableAssociation0C563012:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet3/RouteTable
+  SimpleBenchsPublicSubnet3RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPublicSubnet3RouteTable26192350
+        Ref: SimpleBenchsPublicSubnet3RouteTable
       SubnetId:
-        Ref: SimplesourcingPublicSubnet3Subnet46358BA5
+        Ref: SimpleBenchsPublicSubnet3Subnet
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet3/RouteTableAssociation
-  SimplesourcingPublicSubnet3DefaultRoute04E3E682:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet3/RouteTableAssociation
+  SimpleBenchsPublicSubnet3DefaultRoute:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPublicSubnet3RouteTable26192350
+        Ref: SimpleBenchsPublicSubnet3RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId:
-        Ref: SimplesourcingIGW2A39E80E
+        Ref: SimpleBenchsIGW
     DependsOn:
-      - SimplesourcingVPCGW74E06C51
+      - SimpleBenchsVPCGW
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PublicSubnet3/DefaultRoute
-  SimplesourcingPrivateSubnet1SubnetA4300799:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PublicSubnet3/DefaultRoute
+  SimpleBenchsPrivateSubnet1Subnet:
     Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: 10.0.96.0/19
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       AvailabilityZone: ap-southeast-2a
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet1
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet1
         - Key: aws-cdk:subnet-name
           Value: Private
         - Key: aws-cdk:subnet-type
           Value: Private
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet1/Subnet
-  SimplesourcingPrivateSubnet1RouteTableC85C7A70:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet1/Subnet
+  SimpleBenchsPrivateSubnet1RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet1
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet1
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet1/RouteTable
-  SimplesourcingPrivateSubnet1RouteTableAssociation3F090654:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet1/RouteTable
+  SimpleBenchsPrivateSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPrivateSubnet1RouteTableC85C7A70
+        Ref: SimpleBenchsPrivateSubnet1RouteTable
       SubnetId:
-        Ref: SimplesourcingPrivateSubnet1SubnetA4300799
+        Ref: SimpleBenchsPrivateSubnet1Subnet
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet1/RouteTableAssociation
-  SimplesourcingPrivateSubnet1DefaultRouteCEF6DE16:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet1/RouteTableAssociation
+  SimpleBenchsPrivateSubnet1DefaultRoute:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPrivateSubnet1RouteTableC85C7A70
+        Ref: SimpleBenchsPrivateSubnet1RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       NatGatewayId:
-        Ref: SimplesourcingPublicSubnet1NATGateway212D6362
+        Ref: SimpleBenchsPublicSubnet1NATGateway
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet1/DefaultRoute
-  SimplesourcingPrivateSubnet2Subnet51D20E71:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet1/DefaultRoute
+  SimpleBenchsPrivateSubnet2Subnet:
     Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: 10.0.128.0/19
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       AvailabilityZone: ap-southeast-2b
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet2
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet2
         - Key: aws-cdk:subnet-name
           Value: Private
         - Key: aws-cdk:subnet-type
           Value: Private
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet2/Subnet
-  SimplesourcingPrivateSubnet2RouteTable8A9DB262:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet2/Subnet
+  SimpleBenchsPrivateSubnet2RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet2
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet2
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet2/RouteTable
-  SimplesourcingPrivateSubnet2RouteTableAssociation21544C39:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet2/RouteTable
+  SimpleBenchsPrivateSubnet2RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPrivateSubnet2RouteTable8A9DB262
+        Ref: SimpleBenchsPrivateSubnet2RouteTable
       SubnetId:
-        Ref: SimplesourcingPrivateSubnet2Subnet51D20E71
+        Ref: SimpleBenchsPrivateSubnet2Subnet
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet2/RouteTableAssociation
-  SimplesourcingPrivateSubnet2DefaultRouteCCCCD978:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet2/RouteTableAssociation
+  SimpleBenchsPrivateSubnet2DefaultRoute:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPrivateSubnet2RouteTable8A9DB262
+        Ref: SimpleBenchsPrivateSubnet2RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       NatGatewayId:
-        Ref: SimplesourcingPublicSubnet1NATGateway212D6362
+        Ref: SimpleBenchsPublicSubnet1NATGateway
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet2/DefaultRoute
-  SimplesourcingPrivateSubnet3SubnetF875F4FE:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet2/DefaultRoute
+  SimpleBenchsPrivateSubnet3Subnet:
     Type: AWS::EC2::Subnet
     Properties:
       CidrBlock: 10.0.160.0/19
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       AvailabilityZone: ap-southeast-2c
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet3
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet3
         - Key: aws-cdk:subnet-name
           Value: Private
         - Key: aws-cdk:subnet-type
           Value: Private
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet3/Subnet
-  SimplesourcingPrivateSubnet3RouteTable76C0D719:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet3/Subnet
+  SimpleBenchsPrivateSubnet3RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet3
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet3
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet3/RouteTable
-  SimplesourcingPrivateSubnet3RouteTableAssociationC1ECED07:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet3/RouteTable
+  SimpleBenchsPrivateSubnet3RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPrivateSubnet3RouteTable76C0D719
+        Ref: SimpleBenchsPrivateSubnet3RouteTable
       SubnetId:
-        Ref: SimplesourcingPrivateSubnet3SubnetF875F4FE
+        Ref: SimpleBenchsPrivateSubnet3Subnet
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet3/RouteTableAssociation
-  SimplesourcingPrivateSubnet3DefaultRoute37974A2B:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet3/RouteTableAssociation
+  SimpleBenchsPrivateSubnet3DefaultRoute:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId:
-        Ref: SimplesourcingPrivateSubnet3RouteTable76C0D719
+        Ref: SimpleBenchsPrivateSubnet3RouteTable
       DestinationCidrBlock: 0.0.0.0/0
       NatGatewayId:
-        Ref: SimplesourcingPublicSubnet1NATGateway212D6362
+        Ref: SimpleBenchsPublicSubnet1NATGateway
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/PrivateSubnet3/DefaultRoute
-  SimplesourcingIGW2A39E80E:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/PrivateSubnet3/DefaultRoute
+  SimpleBenchsIGW:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
         - Key: Name
-          Value: Simplesourcing-Vpc-Stack/Simplesourcing
+          Value: Simplesourcing-Vpc-Stack/SimpleBenchs
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/IGW
-  SimplesourcingVPCGW74E06C51:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/IGW
+  SimpleBenchsVPCGW:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
       InternetGatewayId:
-        Ref: SimplesourcingIGW2A39E80E
+        Ref: SimpleBenchsIGW
     Metadata:
-      aws:cdk:path: Simplesourcing-Vpc-Stack/Simplesourcing/VPCGW
-  allowallinternalvpctrafficED80F4FB:
+      aws:cdk:path: Simplesourcing-Vpc-Stack/SimpleBenchs/VPCGW
+  SimpleBenchsAllowAllInternalVpcTraffic:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Simplesourcing-Vpc-Stack/allow-all-internal-vpc-traffic
@@ -347,6 +347,6 @@ Resources:
           IpProtocol: tcp
           ToPort: 65535
       VpcId:
-        Ref: Simplesourcing93B4A445
+        Ref: SimpleBenchsPrivateVpc
     Metadata:
       aws:cdk:path: Simplesourcing-Vpc-Stack/allow-all-internal-vpc-traffic/Resource
