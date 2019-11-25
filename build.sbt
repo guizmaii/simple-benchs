@@ -24,6 +24,7 @@ lazy val benchs =
     .settings(disableScalacFlag("-Ywarn-dead-code"))
     .settings(
       resolvers += Resolver.mavenLocal,
+      resolvers += "confluent" at "https://packages.confluent.io/maven/",
       addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
       libraryDependencies ++= Seq(
         "io.simplesource"        % "simplesource-command-kafka" % "0.2.8-SNAPSHOT",

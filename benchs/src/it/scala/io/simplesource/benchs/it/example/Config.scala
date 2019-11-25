@@ -9,7 +9,7 @@ import io.simplesource.kafka.api.{ AggregateSerdes, ResourceNamingStrategy }
 import io.simplesource.kafka.client.{ CommandAPIBuilder, EventSourcedClient }
 import io.simplesource.kafka.dsl.KafkaConfig.Builder
 import io.simplesource.kafka.dsl.{ AggregateBuilder, EventSourcedApp }
-import io.simplesource.kafka.serialization.avro.AvroAggregateSerdes
+import io.simplesource.kafka.serialization.avro.AvroSerdes
 import io.simplesource.kafka.serialization.json.JsonAggregateSerdes
 import io.simplesource.kafka.util.PrefixResourceNamingStrategy
 
@@ -26,8 +26,8 @@ object Config {
 
   private val avroAggregateName: String                        = "avro-benchs-aggregate"
   private val avroNamingStrategy: PrefixResourceNamingStrategy = new PrefixResourceNamingStrategy("user_avro_");
-  private val avroAggregateSerdes: AvroAggregateSerdes[UserKey, UserCommand, UserEvent, Optional[User]] =
-    new AvroAggregateSerdes(
+  private val avroAggregateSerdes: AggregateSerdes[UserKey, UserCommand, UserEvent, Optional[User]] =
+    AvroSerdes.Custom.aggregate(
       keyMapper,
       commandMapper,
       eventMapper,
