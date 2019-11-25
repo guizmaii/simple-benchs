@@ -313,3 +313,6 @@ Outputs:
     Value: !GetAtt
       - SimpleBenchsKafkaClientEC2Instance
       - PublicDnsName
+  MSKClusterArn:
+    Description: The Arn for the MSKMMCluster1 MSK cluster
+    Value: !Ref SimpleBenchsMSKCluster
