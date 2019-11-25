@@ -4,8 +4,9 @@ set -e
 set -o pipefail
 set -x
 
-git clone https://github.com/simplesourcing/simplesource.git
+git clone https://github.com/guizmaii/simplesource.git
 cd simplesource
+git checkout missing_public
 mvn install --no-transfer-progress
 cd ..
 git clone https://github.com/guizmaii/simplesource-examples
