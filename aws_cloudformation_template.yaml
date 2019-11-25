@@ -205,7 +205,7 @@ Resources:
 
         yum update -y
 
-        yum install python3.7 git htop nmap curl -y
+        yum install python3.7 git htop nmap curl which -y
 
         curl -s "https://get.sdkman.io" | bash
 
@@ -216,6 +216,34 @@ Resources:
         sdk install sbt
 
         sdk install maven
+
+        # -------------------------- #
+        # BEGIN ---- Schema Registry #
+        # -------------------------- #
+
+        sudo rpm --import https://packages.confluent.io/rpm/5.3/archive.key
+
+        cat <<EOF > /etc/yum.repos.d/confluent.repo
+        [Confluent.dist]
+        name=Confluent repository (dist)
+        baseurl=https://packages.confluent.io/rpm/5.3/7
+        gpgcheck=1
+        gpgkey=https://packages.confluent.io/rpm/5.3/archive.key
+        enabled=1
+
+        [Confluent]
+        name=Confluent repository
+        baseurl=https://packages.confluent.io/rpm/5.3
+        gpgcheck=1
+        gpgkey=https://packages.confluent.io/rpm/5.3/archive.key
+        enabled=1
+        EOF
+
+        sudo yum clean all && sudo yum install confluent-platform-2.12
+
+        # ------------------------ #
+        # END ---- Schema Registry #
+        # ------------------------ #
 
         yum erase awscli -y
 
