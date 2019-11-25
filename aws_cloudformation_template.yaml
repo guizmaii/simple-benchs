@@ -205,17 +205,7 @@ Resources:
 
         yum update -y
 
-        yum install python3.7 git htop nmap curl -y
-
-        curl -s "https://get.sdkman.io" | bash
-
-        source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
-
-        sdk install java 8.0.232.hs-adpt
-
-        sdk install sbt
-
-        sdk install maven
+        yum install python3.7 git htop nmap curl which -y
 
         yum erase awscli -y
 
