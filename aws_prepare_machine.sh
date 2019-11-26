@@ -2,7 +2,6 @@
 
 set -e
 set -o pipefail
-set -x
 
 script_usage () {
   echo "Usage:"
