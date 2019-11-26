@@ -17,8 +17,8 @@ object Config {
   // The following code is inspired by:
   //  - https://github.com/simplesourcing/simplesource-examples/blob/master/examples/user/src/main/java/io/simplesource/example/user
 
-  private val bootstrapServers = "localhost:9092"
-  private val schemaRegistry   = "http://schema_registry:8081"
+  private val bootstrapServers = "b-3.simplebenchsmskcl.wbmso3.c2.kafka.ap-southeast-2.amazonaws.com:9092,b-1.simplebenchsmskcl.wbmso3.c2.kafka.ap-southeast-2.amazonaws.com:9092,b-2.simplebenchsmskcl.wbmso3.c2.kafka.ap-southeast-2.amazonaws.com:9092"
+  private val schemaRegistry   = "http://localhost:8081"
 
   private val jsonAggregateName: String                                                                 = "json-benchs-aggregate"
   private val jsonNamingStrategy: PrefixResourceNamingStrategy                                          = new PrefixResourceNamingStrategy("user_json_")
