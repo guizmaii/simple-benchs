@@ -4,11 +4,27 @@ set -e
 set -o pipefail
 set -x
 
+script_usage () {
+  echo "Usage:"
+  echo "  $ $0 kafka_brokers zookeeper_brokers"
+}
+
+if [ -z "$1" ]; then
+    script_usage
+    exit
+fi
+
+if [ -z "$2" ]; then
+    script_usage
+    exit
+fi
+
 curl -s "https://get.sdkman.io" | bash
 source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
 sdk install java 8.0.232.hs-adpt
 sdk install sbt
 sdk install maven
+source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
 
 # -------------------------- #
 # BEGIN ---- Schema Registry #
@@ -38,6 +54,12 @@ sudo yum-config-manager --add-repo confluent.repo
 
 sudo yum clean all
 sudo yum install confluent-platform-2.12 -y
+
+sudo echo ""   | sudo tee -a /etc/schema-registry/schema-registry.properties # new line https://stackoverflow.com/a/23055893/2431728
+sudo echo "$1" | sudo tee -a /etc/schema-registry/schema-registry.properties
+sudo echo "$2" | sudo tee -a /etc/schema-registry/schema-registry.properties
+
+/usr/bin/schema-registry-start /etc/schema-registry/schema-registry.properties &
 
 # ------------------------ #
 # END ---- Schema Registry #
