@@ -63,3 +63,5 @@ sudo echo "kafkastore.connection.url=$2"    | sudo tee -a /etc/schema-registry/s
 # ------------------------ #
 # END ---- Schema Registry #
 # ------------------------ #
+
+./prepare_machine.sh
