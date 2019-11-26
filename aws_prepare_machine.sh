@@ -55,9 +55,9 @@ sudo yum-config-manager --add-repo confluent.repo
 sudo yum clean all
 sudo yum install confluent-platform-2.12 -y
 
-sudo echo ""   | sudo tee -a /etc/schema-registry/schema-registry.properties # new line https://stackoverflow.com/a/23055893/2431728
-sudo echo "$1" | sudo tee -a /etc/schema-registry/schema-registry.properties
-sudo echo "$2" | sudo tee -a /etc/schema-registry/schema-registry.properties
+sudo echo ""                                | sudo tee -a /etc/schema-registry/schema-registry.properties # new line https://stackoverflow.com/a/23055893/2431728
+sudo echo "kafkastore.bootstrap.servers=$1" | sudo tee -a /etc/schema-registry/schema-registry.properties
+sudo echo "kafkastore.connection.url=$2"    | sudo tee -a /etc/schema-registry/schema-registry.properties
 
 /usr/bin/schema-registry-start /etc/schema-registry/schema-registry.properties &
 
