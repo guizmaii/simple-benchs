@@ -4,6 +4,9 @@ set -e
 set -o pipefail
 set -x
 
+rm -rf simplesource
+rm -rf simplesource-examples
+
 git clone https://github.com/guizmaii/simplesource.git
 cd simplesource
 git checkout missing_public
