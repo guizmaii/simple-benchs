@@ -14,7 +14,13 @@
 ./boot-cluster.sh
 ```
 
-#### 3. Launch the benchs
+#### 3. (Optional) Test your Kafka cluster connection
+
+```bash
+kafka-topics --list --bootstrap-server kafka-3:29092
+```
+
+#### 4. Launch the benchs
 
 We also provide a script for that:
 
