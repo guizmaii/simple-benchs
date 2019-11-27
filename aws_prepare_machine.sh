@@ -68,3 +68,5 @@ mv benchs/src/it/resources/benchs.conf benchs/src/it/resources/benchs.old.conf
 touch benchs/src/it/resources/benchs.conf
 echo "benchs.kafka.bootstrap-servers=\"$1\"" >> benchs/src/it/resources/benchs.conf
 echo 'benchs.kafka.schema-registry="http://localhost:8081"' >> benchs/src/it/resources/benchs.conf
+
+./prepare_machine.sh
