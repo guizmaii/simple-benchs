@@ -1,6 +1,6 @@
 # simple-benchs [![Build Status](https://travis-ci.org/guizmaii/simple-benchs.svg?branch=master)](https://travis-ci.org/guizmaii/simple-benchs)
 
-### How to execute locally
+## How to execute locally
 
 1. Install the required tools
 
@@ -34,7 +34,7 @@
      - `<timestamp>` is the date when you launched the benchmark
    
 
-### How to execute on AWS:
+## How to execute on AWS
 
 1. Launch the required infrastructure
 
