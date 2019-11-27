@@ -99,7 +99,7 @@ where:
 We also provide a script for that:
 
 ```bash
-./exec.sh
+./aws_exec.sh
 ```
 
 #### 7. Observe the run
