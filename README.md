@@ -33,8 +33,6 @@ kafka-topics --list --bootstrap-server kafka-3:29092
 
 #### 5. Launch the benchs
 
-We also provide a script for that:
-
 ```bash
 ./exec.sh
 ```
