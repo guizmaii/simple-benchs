@@ -1,1 +1,1 @@
-# simple-benchs
+# simple-benchs [![Build Status](https://travis-ci.org/guizmaii/simple-benchs.svg?branch=master)](https://travis-ci.org/guizmaii/simple-benchs)

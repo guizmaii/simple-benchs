@@ -1,0 +1,36 @@
+sudo: false
+services:
+  - docker
+language: scala
+scala:
+  - 2.12.10
+addons:
+  hosts:
+    - broker
+jdk:
+  - openjdk8
+  - openjdk11
+
+# I need to update Maven because the `--no-transfer-progress` option is not available on the pre-installed version.
+# I need this Maven option because, without, the outputs of the maven commands I launch are too big for Travis, which so kill the build...
+before_install:
+  - wget http://apache.mirror.gtcomm.net/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
+  - tar xzvf apache-maven-3.6.2-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.6.2/bin:$PATH
+  - mvn -v
+
+script:
+  - ./prepare_machine.sh
+  - ./boot-cluster.sh
+  - sbt ++$TRAVIS_SCALA_VERSION clean gatling:test
+  - boot-cluster.sh
+  - sbt ++$TRAVIS_SCALA_VERSION clean gatling-it:test
+
+
+# Comes from: https://github.com/http4s/http4s/blob/master/.travis.yml#L109
+cache:
+  directories:
+    - "$HOME/.cache"
+    - "$HOME/.ivy2/cache"
+    - "$HOME/.sbt/boot"
+    - "$HOME/.m2"
