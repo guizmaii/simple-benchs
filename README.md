@@ -97,3 +97,13 @@ tail -f result-<timestamp>.log
 
 where:
  - `<timestamp>` is the date when you launched the benchmark
+
+## FAQ
+
+#### `./exec.sh` fails with the following message: ./exec.sh: line 8: sbt: command not found
+
+Sdkman is not in your PATH, to fix that:
+
+```bash
+source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
+```
