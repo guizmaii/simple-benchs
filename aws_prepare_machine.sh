@@ -5,7 +5,7 @@ set -o pipefail
 
 script_usage () {
   echo "Usage:"
-  echo "  $ $0 kafka_brokers zookeeper_brokers"
+  echo "  $ $0 <kafka_brokers> <zookeeper_brokers>"
 }
 
 if [ -z "$1" ]; then
@@ -63,5 +63,10 @@ sudo echo "kafkastore.connection.url=$2"    | sudo tee -a /etc/schema-registry/s
 # ------------------------ #
 # END ---- Schema Registry #
 # ------------------------ #
+
+mv benchs/src/it/resources/benchs.conf benchs/src/it/resources/benchs.old.conf
+touch benchs/src/it/resources/benchs.conf
+echo "benchs.kafka.bootstrap-servers=\"$1\"" >> benchs/src/it/resources/benchs.conf
+echo 'benchs.kafka.schema-registry="http://localhost:8081"' >> benchs/src/it/resources/benchs.conf
 
 ./prepare_machine.sh
