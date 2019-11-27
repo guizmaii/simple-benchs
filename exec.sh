@@ -2,7 +2,6 @@
 
 set -e
 set -o pipefail
-set -x
 
 # Tested on Macos only. I don't know if the `date` format I use will work correctly on Linux.
 

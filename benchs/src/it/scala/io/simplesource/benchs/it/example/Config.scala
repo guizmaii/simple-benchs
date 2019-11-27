@@ -2,6 +2,7 @@ package io.simplesource.benchs.it.example
 
 import java.util.Optional
 
+import com.typesafe.config.ConfigFactory
 import io.simplesource.api.CommandAPI
 import io.simplesource.example.user.avro.UserAvroMappers.{ aggregateMapper, commandMapper, eventMapper, keyMapper }
 import io.simplesource.example.user.domain.{ User, UserCommand, UserEvent, UserKey }
@@ -17,8 +18,9 @@ object Config {
   // The following code is inspired by:
   //  - https://github.com/simplesourcing/simplesource-examples/blob/master/examples/user/src/main/java/io/simplesource/example/user
 
-  private val bootstrapServers = "localhost:9092"
-  private val schemaRegistry   = "http://schema_registry:8081"
+  private val config           = ConfigFactory.load("benchs.conf")
+  private val bootstrapServers = config.getString("benchs.kafka.bootstrap-servers")
+  private val schemaRegistry   = config.getString("benchs.kafka.schema-registry")
 
   private val jsonAggregateName: String                                                                 = "json-benchs-aggregate"
   private val jsonNamingStrategy: PrefixResourceNamingStrategy                                          = new PrefixResourceNamingStrategy("user_json_")
