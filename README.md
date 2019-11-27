@@ -122,3 +122,10 @@ Sdkman is not in your PATH, to fix that:
 ```bash
 source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
 ```
+
+#### In AWS, how to describe the Kafka topics.
+
+```bash
+cd ~
+./kafka/kafka_2.12-2.2.1/bin/kafka-topics.sh --describe --bootstrap-server <bootstrap-servers>
+```
