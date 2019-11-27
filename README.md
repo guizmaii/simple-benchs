@@ -14,7 +14,24 @@
 ./boot-cluster.sh
 ```
 
-#### 3. Launch the benchs
+#### 3. Edit your host file
+
+Add these entries in your host file:
+
+```bash
+127.0.0.1 kafka-1
+127.0.0.1 kafka-2
+127.0.0.1 kafka-3
+127.0.0.1 schema-registry
+```
+
+#### 4. (Optional) Test your Kafka cluster connection
+
+```bash
+kafka-topics --list --bootstrap-server kafka-3:29092
+```
+
+#### 5. Launch the benchs
 
 We also provide a script for that:
 
@@ -22,7 +39,7 @@ We also provide a script for that:
 ./exec.sh
 ```
 
-#### 4. Observe the run
+#### 6. Observe the run
 
 To observe what's happening you should `tail` the benchmark log:
 

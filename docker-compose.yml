@@ -1,52 +1,84 @@
+---
 version: '3'
 services:
   zookeeper:
-    image: 'confluentinc/cp-zookeeper:5.0.0'
-    restart: always
-    hostname: zookeeper
-    ports:
-      - "2181:2181"
+    image: confluentinc/cp-zookeeper:5.3.1-1
+    container_name: zookeeper
     environment:
-      ZOO_MY_ID: 1
-      ZOO_PORT: 2181
-      ZOO_SERVERS: server.1=zookeeper:2888:3888
-      COMPONENT: zookeeper
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+    # volumes:
+    #   - ./data/container_data/zk-data:/var/lib/zookeeper/data
+    #   - ./data/container_data/zk-txn-logs:/var/lib/zookeeper/log
 
-  broker:
-    image: 'confluentinc/cp-kafka:5.0.0'
-    hostname: broker
-    stop_grace_period: 120s
+  kafka-1:
+    image: confluentinc/cp-enterprise-kafka:5.3.1-1
+    container_name: kafka-1
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092"
-      - "8500:8500"
+      - 9092:9092
     environment:
-      COMPONENT: kafka
-      KAFKA_BROKER_ID: 1001
-      KAFKA_RESERVED_BROKER_MAX_ID: 10000
-      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://broker:9092'
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
-      KAFKA_JMX_OPTS: '-Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=broker -Djava.net.preferIPv4Stack=true -Dcom.sun.management.jmxremote.rmi.port=8500'
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:39092,HOST://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-1:39092,HOST://localhost:9092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 100
+    # volumes:
+    #   - ./data/container_data/kafka-1-data:/var/lib/kafka/data
 
-  schema_registry:
-    image: 'confluentinc/cp-schema-registry:5.0.0'
-    hostname: schema_registry
+  kafka-2:
+    image: confluentinc/cp-enterprise-kafka:5.3.1-1
+    container_name: kafka-2
     depends_on:
       - zookeeper
-      - broker
     ports:
-      - "8081:8081"
+      - 19092:19092
     environment:
-      TZ: Australia/Sydney
-      SCHEMA_REGISTRY_HOST_NAME: schema_registry
-      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
-      SCHEMA_REGISTRY_KAFKASTORE_TIMEOUT_MS: 10000
-      SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: 'INFO'
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:49092,HOST://0.0.0.0:19092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-2:49092,HOST://localhost:19092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 100
+    # volumes:
+    #   - ./data/container_data/kafka-2-data:/var/lib/kafka/data
+
+  kafka-3:
+    image: confluentinc/cp-enterprise-kafka:5.3.1-1
+    container_name: kafka-3
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:59092,HOST://0.0.0.0:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-3:59092,HOST://localhost:29092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 100
+    # volumes:
+    #   - ./data/container_data/kafka-3-data:/var/lib/kafka/data
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:5.3.1-1
+    ports:
+      - 8081:8081
+    container_name: schema-registry
+    depends_on:
+      - zookeeper
+      - kafka-1
+      - kafka-2
+      - kafka-3
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka-1:39092,PLAINTEXT://kafka-2:49092,PLAINTEXT://kafka-3:59092
+      SCHEMA_REGISTRY_CUB_KAFKA_TIMEOUT: 300
