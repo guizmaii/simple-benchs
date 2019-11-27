@@ -54,6 +54,7 @@ object Config {
           .build()
       }.withAggregate { builder: AggregateBuilder[UserKey, UserCommand, UserEvent, Optional[User]] =>
         builder
+          .withDefaultTopicSpec(3, 2, -1)
           .withName(aggregateName)
           .withSerdes(serdes)
           .withResourceNamingStrategy(namingStrategy)
