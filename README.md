@@ -78,8 +78,7 @@ where:
 #### 4. Git clone this repo on the ec2 instance
 
 ```bash
-git clone https://github.com/guizmaii/simple-benchs
-cd simple-benchs
+git clone https://github.com/guizmaii/simple-benchs && cd simple-benchs
 ```
 
 #### 5. Install the required tools
