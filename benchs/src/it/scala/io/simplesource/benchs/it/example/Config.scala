@@ -69,6 +69,7 @@ object Config {
         .withKafkaConfig(_.withKafkaBootstrap(bootstrapServers).build())
         .createCommandAPI { builder: CommandAPIBuilder[UserKey, UserCommand] =>
           builder
+            .withTopicSpec(3, 3)
             .withClientId(clientId)
             .withName(aggregateName)
             .withSerdes(serdes)
