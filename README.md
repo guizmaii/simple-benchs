@@ -115,7 +115,7 @@ where:
 
 ## FAQ
 
-#### `./exec.sh` fails with the following message: ./exec.sh: line 8: sbt: command not found
+- #### `./exec.sh` fails with the following message: ./exec.sh: line 8: sbt: command not found
 
 Sdkman is not in your PATH, to fix that:
 
@@ -123,7 +123,7 @@ Sdkman is not in your PATH, to fix that:
 source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
 ```
 
-#### In AWS, how to describe the Kafka topics.
+- #### In AWS, how to describe the Kafka topics.
 
 ```bash
 cd ~
