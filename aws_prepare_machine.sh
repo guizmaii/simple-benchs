@@ -25,6 +25,9 @@ sdk install sbt
 sdk install maven
 source "/home/ec2-user/.sdkman/bin/sdkman-init.sh"
 
+# Download sbt
+sbt version | echo ""
+
 # -------------------------- #
 # BEGIN ---- Schema Registry #
 # -------------------------- #
