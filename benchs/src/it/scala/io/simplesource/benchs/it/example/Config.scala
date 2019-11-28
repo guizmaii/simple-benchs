@@ -51,6 +51,7 @@ object Config {
         builder
           .withKafkaApplicationId(applicationId)
           .withKafkaBootstrap(bootstrapServers)
+          .withReplicationFactor(3)
           .build()
       }.withAggregate { builder: AggregateBuilder[UserKey, UserCommand, UserEvent, Optional[User]] =>
         builder

@@ -9,7 +9,7 @@ rm -rf simplesource-examples
 
 git clone https://github.com/guizmaii/simplesource.git
 cd simplesource
-git checkout missing_public
+git checkout local_master
 mvn install --no-transfer-progress
 cd ..
 git clone https://github.com/guizmaii/simplesource-examples
