@@ -39,7 +39,7 @@ kafka-topics --list --bootstrap-server kafka-3:29092
 
 #### 6. Observe the run
 
-To observe what's happening you should `tail` the benchmark log:
+To observe what's happening you should `tail` the benchmark log in another terminal:
 
 ```bash
 tail -f result-<timestamp>.log
@@ -103,7 +103,7 @@ We also provide a script for that:
 
 #### 7. Observe the run
 
-To observe what's happening you should `tail` the benchmark log:
+To observe what's happening you should `tail` the benchmark log in another terminal:
 
 ```bash
 tail -f result-<timestamp>.log
