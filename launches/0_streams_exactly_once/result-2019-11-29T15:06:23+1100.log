@@ -1,0 +1,2298 @@
+[info] Loading global plugins from /Users/jules/.sbt/1.0/plugins
+[info] Loading settings for project simple-benchs-build from plugins.sbt ...
+[info] Loading project definition from /Users/jules/simplemachines/workspace/simple-benchs/project
+[info] Loading settings for project root from build.sbt ...
+[info] Set current project to simple-benchs (in build file:/Users/jules/simplemachines/workspace/simple-benchs/)
+15:06:33.149 [INFO ] i.g.c.c.GatlingConfiguration$ - Gatling will try to use 'gatling.conf' as custom config file.
+15:06:33.606 [INFO ] a.e.s.Slf4jLogger - Slf4jLogger started
+15:06:34.106 [INFO ] i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	bearer.auth.token = [hidden]
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+15:06:34.120 [INFO ] i.c.k.s.KafkaAvroDeserializerConfig - KafkaAvroDeserializerConfig values: 
+	bearer.auth.token = [hidden]
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	specific.avro.reader = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+15:06:34.121 [INFO ] i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	bearer.auth.token = [hidden]
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+15:06:34.121 [INFO ] i.c.k.s.KafkaAvroDeserializerConfig - KafkaAvroDeserializerConfig values: 
+	bearer.auth.token = [hidden]
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	specific.avro.reader = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+15:06:34.121 [INFO ] i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	bearer.auth.token = [hidden]
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
+
+15:06:34.121 [INFO ] i.c.k.s.KafkaAvroDeserializerConfig - KafkaAvroDeserializerConfig values: 
+	bearer.auth.token = [hidden]
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	specific.avro.reader = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
+
+15:06:34.156 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class io.simplesource.kafka.serialization.util.GenericSerde$1
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.simplesource.kafka.serialization.util.GenericSerde$1
+
+15:06:34.213 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+15:06:34.257 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:34.257 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:34.257 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000394256
+15:06:34.260 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class io.simplesource.kafka.serialization.util.GenericSerde$1
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+15:06:34.261 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=producer-2] Instantiated an idempotent producer.
+15:06:34.270 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:34.270 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:34.270 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000394270
+15:06:34.275 [INFO ] o.a.k.c.a.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+15:06:34.297 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:34.297 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:34.297 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000394297
+15:06:34.456 [INFO ] o.a.k.c.Metadata - [Producer clientId=producer-1] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:34.456 [INFO ] o.a.k.c.Metadata - [Producer clientId=producer-2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:34.457 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-2] ProducerId set to 1001 with epoch 0
+15:06:34.457 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-1] ProducerId set to 1000 with epoch 0
+15:06:34.562 [INFO ] o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = response_consumer_e703f4a6
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor]
+	internal.leave.group.on.close = true
+	isolation.level = read_committed
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class io.simplesource.kafka.serialization.util.GenericSerde$2
+
+15:06:34.564 [ERROR] i.c.m.c.i.MonitoringConsumerInterceptor - IsolationLevel=READ_COMMITTED not supported. monitoring disabled
+15:06:34.586 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:34.586 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:34.586 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000394586
+15:06:34.587 [INFO ] o.a.k.c.c.KafkaConsumer - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Subscribed to topic(s): user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client
+15:06:34.597 [INFO ] o.a.k.c.Metadata - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:34.598 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+15:06:34.599 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Revoking previously assigned partitions []
+15:06:34.599 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] (Re-)joining group
+15:06:34.606 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] (Re-)joining group
+15:06:34.650 [INFO ] o.a.k.c.a.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+15:06:34.651 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:34.651 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:34.651 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000394651
+15:06:34.741 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Successfully joined group with generation 1
+15:06:34.745 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Setting newly assigned partitions: user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-0, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-1, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-2
+15:06:34.756 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-0
+15:06:34.757 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-1
+15:06:34.757 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-2
+15:06:34.777 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-0 to offset 0.
+15:06:34.785 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-1 to offset 0.
+15:06:34.786 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_avro-user-benchs-client-2 to offset 0.
+15:06:34.959 [INFO ] i.s.k.i.s.EventSourcedStreamsApp - Topology description Topologies:
+   Sub-topology: 0
+    Source: KSTREAM-SOURCE-0000000000 (topics: [user_avro_avro-benchs-aggregate-COMMAND_REQUEST])
+      --> KSTREAM-KEY-SELECT-0000000012
+    Processor: KSTREAM-KEY-SELECT-0000000012 (stores: [])
+      --> KSTREAM-FILTER-0000000014
+      <-- KSTREAM-SOURCE-0000000000
+    Processor: KSTREAM-FILTER-0000000014 (stores: [])
+      --> KSTREAM-SINK-0000000013
+      <-- KSTREAM-KEY-SELECT-0000000012
+    Sink: KSTREAM-SINK-0000000013 (topic: KSTREAM-KEY-SELECT-0000000012-repartition)
+      <-- KSTREAM-FILTER-0000000014
+
+  Sub-topology: 1
+    Source: KSTREAM-SOURCE-0000000001 (topics: [user_avro_avro-benchs-aggregate-COMMAND_RESPONSE])
+      --> KSTREAM-KEY-SELECT-0000000037, KSTREAM-KEY-SELECT-0000000006
+    Processor: KSTREAM-KEY-SELECT-0000000006 (stores: [])
+      --> KSTREAM-FILTER-0000000010
+      <-- KSTREAM-SOURCE-0000000001
+    Processor: KSTREAM-KEY-SELECT-0000000037 (stores: [])
+      --> KSTREAM-FILTER-0000000039
+      <-- KSTREAM-SOURCE-0000000001
+    Processor: KSTREAM-FILTER-0000000010 (stores: [])
+      --> KSTREAM-SINK-0000000009
+      <-- KSTREAM-KEY-SELECT-0000000006
+    Processor: KSTREAM-FILTER-0000000039 (stores: [])
+      --> KSTREAM-SINK-0000000038
+      <-- KSTREAM-KEY-SELECT-0000000037
+    Sink: KSTREAM-SINK-0000000009 (topic: KSTREAM-REDUCE-STATE-STORE-0000000007-repartition)
+      <-- KSTREAM-FILTER-0000000010
+    Sink: KSTREAM-SINK-0000000038 (topic: KSTREAM-KEY-SELECT-0000000037-repartition)
+      <-- KSTREAM-FILTER-0000000039
+
+  Sub-topology: 2
+    Source: KSTREAM-SOURCE-0000000026 (topics: [KSTREAM-MAPVALUES-0000000021-repartition])
+      --> KSTREAM-LEFTJOIN-0000000027
+    Processor: KSTREAM-LEFTJOIN-0000000027 (stores: [user_avro_avro-benchs-aggregate-AGGREGATE-STATE-STORE-0000000002])
+      --> KSTREAM-FLATMAPVALUES-0000000028, KSTREAM-MAPVALUES-0000000029
+      <-- KSTREAM-SOURCE-0000000026
+    Processor: KSTREAM-MAPVALUES-0000000029 (stores: [])
+      --> KSTREAM-FLATMAPVALUES-0000000030, KSTREAM-MAPVALUES-0000000031
+      <-- KSTREAM-LEFTJOIN-0000000027
+    Processor: KSTREAM-FLATMAPVALUES-0000000028 (stores: [])
+      --> KSTREAM-PEEK-0000000032
+      <-- KSTREAM-LEFTJOIN-0000000027
+    Processor: KSTREAM-FLATMAPVALUES-0000000030 (stores: [])
+      --> KSTREAM-SINK-0000000034
+      <-- KSTREAM-MAPVALUES-0000000029
+    Processor: KSTREAM-MAPVALUES-0000000031 (stores: [])
+      --> KSTREAM-SINK-0000000036
+      <-- KSTREAM-MAPVALUES-0000000029
+    Processor: KSTREAM-PEEK-0000000032 (stores: [])
+      --> KSTREAM-SINK-0000000033
+      <-- KSTREAM-FLATMAPVALUES-0000000028
+    Source: KSTREAM-SOURCE-0000000003 (topics: [user_avro_avro-benchs-aggregate-AGGREGATE])
+      --> KTABLE-SOURCE-0000000004
+    Sink: KSTREAM-SINK-0000000033 (topic: user_avro_avro-benchs-aggregate-EVENT)
+      <-- KSTREAM-PEEK-0000000032
+    Sink: KSTREAM-SINK-0000000034 (topic: user_avro_avro-benchs-aggregate-AGGREGATE)
+      <-- KSTREAM-FLATMAPVALUES-0000000030
+    Sink: KSTREAM-SINK-0000000036 (topic: user_avro_avro-benchs-aggregate-COMMAND_RESPONSE)
+      <-- KSTREAM-MAPVALUES-0000000031
+    Processor: KTABLE-SOURCE-0000000004 (stores: [user_avro_avro-benchs-aggregate-AGGREGATE-STATE-STORE-0000000002])
+      --> none
+      <-- KSTREAM-SOURCE-0000000003
+
+  Sub-topology: 3
+    Source: KSTREAM-SOURCE-0000000005 (topics: [user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP])
+      --> KSTREAM-WINDOWED-0000000042
+    Source: KSTREAM-SOURCE-0000000040 (topics: [KSTREAM-KEY-SELECT-0000000037-repartition])
+      --> KSTREAM-WINDOWED-0000000041
+    Processor: KSTREAM-WINDOWED-0000000041 (stores: [KSTREAM-JOINTHIS-0000000043-store])
+      --> KSTREAM-JOINTHIS-0000000043
+      <-- KSTREAM-SOURCE-0000000040
+    Processor: KSTREAM-WINDOWED-0000000042 (stores: [KSTREAM-JOINOTHER-0000000044-store])
+      --> KSTREAM-JOINOTHER-0000000044
+      <-- KSTREAM-SOURCE-0000000005
+    Processor: KSTREAM-JOINOTHER-0000000044 (stores: [KSTREAM-JOINTHIS-0000000043-store])
+      --> KSTREAM-MERGE-0000000045
+      <-- KSTREAM-WINDOWED-0000000042
+    Processor: KSTREAM-JOINTHIS-0000000043 (stores: [KSTREAM-JOINOTHER-0000000044-store])
+      --> KSTREAM-MERGE-0000000045
+      <-- KSTREAM-WINDOWED-0000000041
+    Processor: KSTREAM-MERGE-0000000045 (stores: [])
+      --> KSTREAM-MAP-0000000046
+      <-- KSTREAM-JOINTHIS-0000000043, KSTREAM-JOINOTHER-0000000044
+    Processor: KSTREAM-MAP-0000000046 (stores: [])
+      --> KSTREAM-SINK-0000000047
+      <-- KSTREAM-MERGE-0000000045
+    Sink: KSTREAM-SINK-0000000047 (extractor class: io.simplesource.kafka.internal.streams.topology.ResultDistributor$$Lambda$573/1855687772@1f192edc)
+      <-- KSTREAM-MAP-0000000046
+
+  Sub-topology: 4
+    Source: KSTREAM-SOURCE-0000000015 (topics: [KSTREAM-KEY-SELECT-0000000012-repartition])
+      --> KSTREAM-LEFTJOIN-0000000016
+    Processor: KSTREAM-LEFTJOIN-0000000016 (stores: [KSTREAM-REDUCE-STATE-STORE-0000000007])
+      --> KSTREAM-KEY-SELECT-0000000017
+      <-- KSTREAM-SOURCE-0000000015
+    Processor: KSTREAM-KEY-SELECT-0000000017 (stores: [])
+      --> KSTREAM-BRANCH-0000000018
+      <-- KSTREAM-LEFTJOIN-0000000016
+    Processor: KSTREAM-BRANCH-0000000018 (stores: [])
+      --> KSTREAM-BRANCHCHILD-0000000019, KSTREAM-BRANCHCHILD-0000000020
+      <-- KSTREAM-KEY-SELECT-0000000017
+    Processor: KSTREAM-BRANCHCHILD-0000000019 (stores: [])
+      --> KSTREAM-MAPVALUES-0000000021
+      <-- KSTREAM-BRANCH-0000000018
+    Processor: KSTREAM-BRANCHCHILD-0000000020 (stores: [])
+      --> KSTREAM-MAPVALUES-0000000022
+      <-- KSTREAM-BRANCH-0000000018
+    Processor: KSTREAM-MAPVALUES-0000000021 (stores: [])
+      --> KSTREAM-FILTER-0000000025
+      <-- KSTREAM-BRANCHCHILD-0000000019
+    Processor: KSTREAM-MAPVALUES-0000000022 (stores: [])
+      --> KSTREAM-PEEK-0000000023
+      <-- KSTREAM-BRANCHCHILD-0000000020
+    Processor: KSTREAM-FILTER-0000000025 (stores: [])
+      --> KSTREAM-SINK-0000000024
+      <-- KSTREAM-MAPVALUES-0000000021
+    Processor: KSTREAM-PEEK-0000000023 (stores: [])
+      --> KSTREAM-SINK-0000000035
+      <-- KSTREAM-MAPVALUES-0000000022
+    Source: KSTREAM-SOURCE-0000000011 (topics: [KSTREAM-REDUCE-STATE-STORE-0000000007-repartition])
+      --> KSTREAM-REDUCE-0000000008
+    Processor: KSTREAM-REDUCE-0000000008 (stores: [KSTREAM-REDUCE-STATE-STORE-0000000007])
+      --> none
+      <-- KSTREAM-SOURCE-0000000011
+    Sink: KSTREAM-SINK-0000000024 (topic: KSTREAM-MAPVALUES-0000000021-repartition)
+      <-- KSTREAM-FILTER-0000000025
+    Sink: KSTREAM-SINK-0000000035 (topic: user_avro_avro-benchs-aggregate-COMMAND_RESPONSE)
+      <-- KSTREAM-PEEK-0000000023
+
+
+15:06:34.967 [INFO ] o.a.k.s.StreamsConfig - StreamsConfig values: 
+	application.id = avro-user-benchs-app
+	application.server = 
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffered.records.per.partition = 1000
+	cache.max.bytes.buffering = 10485760
+	client.id = 
+	commit.interval.ms = 100
+	connections.max.idle.ms = 540000
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndFailExceptionHandler
+	default.key.serde = class org.apache.kafka.common.serialization.Serdes$ByteArraySerde
+	default.production.exception.handler = class org.apache.kafka.streams.errors.DefaultProductionExceptionHandler
+	default.timestamp.extractor = class org.apache.kafka.streams.processor.FailOnInvalidTimestamp
+	default.value.serde = class org.apache.kafka.common.serialization.Serdes$ByteArraySerde
+	max.task.idle.ms = 0
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 0
+	num.stream.threads = 1
+	partition.grouper = class org.apache.kafka.streams.processor.DefaultPartitionGrouper
+	poll.ms = 100
+	processing.guarantee = exactly_once
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	replication.factor = 3
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = null
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	state.cleanup.delay.ms = 600000
+	state.dir = /tmp/kafka-streams
+	topology.optimization = none
+	upgrade.from = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+15:06:34.996 [INFO ] o.a.k.c.a.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-admin
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+15:06:34.998 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:34.998 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:34.998 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000394998
+15:06:34.998 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating restore consumer client
+15:06:34.999 [INFO ] o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor]
+	internal.leave.group.on.close = false
+	isolation.level = read_committed
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+15:06:35.000 [ERROR] i.c.m.c.i.MonitoringConsumerInterceptor - IsolationLevel=READ_COMMITTED not supported. monitoring disabled
+15:06:35.002 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:35.002 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:35.002 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000395002
+15:06:35.008 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating consumer client
+15:06:35.010 [INFO ] o.a.k.c.c.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = avro-user-benchs-app
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor]
+	internal.leave.group.on.close = false
+	isolation.level = read_committed
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+15:06:35.010 [ERROR] i.c.m.c.i.MonitoringConsumerInterceptor - IsolationLevel=READ_COMMITTED not supported. monitoring disabled
+15:06:35.016 [WARN ] o.a.k.c.c.ConsumerConfig - The configuration 'admin.retries' was supplied but isn't a known config.
+15:06:35.016 [WARN ] o.a.k.c.c.ConsumerConfig - The configuration 'admin.retry.backoff.ms' was supplied but isn't a known config.
+15:06:35.016 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:35.016 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:35.016 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000395016
+15:06:35.020 [INFO ] o.a.k.s.KafkaStreams - stream-client [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40] State transition from CREATED to REBALANCING
+15:06:35.020 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Starting
+15:06:35.020 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] State transition from CREATED to STARTING
+15:06:35.021 [INFO ] o.a.k.c.c.KafkaConsumer - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Subscribed to pattern: 'avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition|avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition|avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition|avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition|user_avro_avro-benchs-aggregate-AGGREGATE|user_avro_avro-benchs-aggregate-COMMAND_REQUEST|user_avro_avro-benchs-aggregate-COMMAND_RESPONSE|user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP'
+15:06:35.021 [INFO ] i.s.k.i.s.EventSourcedStreamsApp - KafkaStreams now in state REBALANCING waiting until RUNNING for 5 seconds
+15:06:35.030 [INFO ] o.a.k.c.Metadata - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:35.030 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Discovered group coordinator localhost:19092 (id: 2147483645 rack: null)
+15:06:35.031 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Revoking previously assigned partitions []
+15:06:35.031 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] State transition from STARTING to PARTITIONS_REVOKED
+15:06:35.031 [INFO ] o.a.k.c.c.KafkaConsumer - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+15:06:35.031 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] partition revocation took 0 ms.
+	suspended active tasks: []
+	suspended standby tasks: []
+15:06:35.031 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] (Re-)joining group
+15:06:35.052 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] (Re-)joining group
+15:06:35.471 [INFO ] o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer] Assigned tasks to clients as {81546691-3a5f-4f3a-bddc-c8a648e6ba40=[activeTasks: ([0_0, 0_1, 1_0, 0_2, 1_1, 2_0, 1_2, 2_1, 3_0, 2_2, 3_1, 4_0, 3_2, 4_1, 4_2]) standbyTasks: ([]) assignedTasks: ([0_0, 0_1, 1_0, 0_2, 1_1, 2_0, 1_2, 2_1, 3_0, 2_2, 3_1, 4_0, 3_2, 4_1, 4_2]) prevActiveTasks: ([]) prevStandbyTasks: ([]) prevAssignedTasks: ([]) capacity: 1]}.
+15:06:35.472 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] The following not-subscribed topics are assigned, and their metadata will be fetched from the brokers: [avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition, avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition]
+15:06:35.523 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Successfully joined group with generation 1
+15:06:35.523 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Setting newly assigned partitions: avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-1, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1, avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-1, avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-0, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-2, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-1, avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2, user_avro_avro-benchs-aggregate-COMMAND_REQUEST-0, user_avro_avro-benchs-aggregate-COMMAND_REQUEST-2, user_avro_avro-benchs-aggregate-AGGREGATE-1, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-2, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-0, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-2, avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0, avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2, avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-0, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-0, user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-1, avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1, user_avro_avro-benchs-aggregate-COMMAND_REQUEST-1, user_avro_avro-benchs-aggregate-AGGREGATE-2, user_avro_avro-benchs-aggregate-AGGREGATE-0
+15:06:35.523 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] State transition from PARTITIONS_REVOKED to PARTITIONS_ASSIGNED
+15:06:35.531 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 0_0
+15:06:35.531 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-0_0
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:35.532 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:35.532 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer, transactionalId=avro-user-benchs-app-0_0] Instantiated a transactional producer.
+15:06:35.533 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer, transactionalId=avro-user-benchs-app-0_0] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:35.533 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer, transactionalId=avro-user-benchs-app-0_0] Overriding the default acks to all since idempotence is enabled.
+15:06:35.533 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:35.533 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:35.533 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000395533
+15:06:35.540 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer, transactionalId=avro-user-benchs-app-0_0] ProducerId set to -1 with epoch -1
+15:06:35.770 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer, transactionalId=avro-user-benchs-app-0_0] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:36.343 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_0-producer, transactionalId=avro-user-benchs-app-0_0] ProducerId set to 2000 with epoch 0
+15:06:36.344 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 1_0
+15:06:36.344 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-1_0
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:36.344 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:36.344 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer, transactionalId=avro-user-benchs-app-1_0] Instantiated a transactional producer.
+15:06:36.345 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer, transactionalId=avro-user-benchs-app-1_0] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:36.345 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer, transactionalId=avro-user-benchs-app-1_0] Overriding the default acks to all since idempotence is enabled.
+15:06:36.345 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:36.346 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:36.346 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000396345
+15:06:36.346 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer, transactionalId=avro-user-benchs-app-1_0] ProducerId set to -1 with epoch -1
+15:06:36.459 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer, transactionalId=avro-user-benchs-app-1_0] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:37.556 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_0-producer, transactionalId=avro-user-benchs-app-1_0] ProducerId set to 0 with epoch 0
+15:06:37.556 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 0_1
+15:06:37.557 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-0_1
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:37.557 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:37.557 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer, transactionalId=avro-user-benchs-app-0_1] Instantiated a transactional producer.
+15:06:37.558 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer, transactionalId=avro-user-benchs-app-0_1] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:37.558 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer, transactionalId=avro-user-benchs-app-0_1] Overriding the default acks to all since idempotence is enabled.
+15:06:37.558 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:37.558 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:37.558 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000397558
+15:06:37.559 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer, transactionalId=avro-user-benchs-app-0_1] ProducerId set to -1 with epoch -1
+15:06:37.672 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer, transactionalId=avro-user-benchs-app-0_1] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:37.693 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_1-producer, transactionalId=avro-user-benchs-app-0_1] ProducerId set to 1002 with epoch 0
+15:06:37.693 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 1_1
+15:06:37.694 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-1_1
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:37.694 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:37.694 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Instantiated a transactional producer.
+15:06:37.695 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:37.696 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Overriding the default acks to all since idempotence is enabled.
+15:06:37.696 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:37.696 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:37.696 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000397696
+15:06:37.697 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] ProducerId set to -1 with epoch -1
+15:06:37.811 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:37.817 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] ProducerId set to 2001 with epoch 0
+15:06:37.818 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 0_2
+15:06:37.818 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-0_2
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:37.819 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:37.819 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer, transactionalId=avro-user-benchs-app-0_2] Instantiated a transactional producer.
+15:06:37.820 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer, transactionalId=avro-user-benchs-app-0_2] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:37.820 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer, transactionalId=avro-user-benchs-app-0_2] Overriding the default acks to all since idempotence is enabled.
+15:06:37.820 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:37.820 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:37.820 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000397820
+15:06:37.821 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer, transactionalId=avro-user-benchs-app-0_2] ProducerId set to -1 with epoch -1
+15:06:37.933 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer, transactionalId=avro-user-benchs-app-0_2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:37.938 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-0_2-producer, transactionalId=avro-user-benchs-app-0_2] ProducerId set to 1 with epoch 0
+15:06:37.938 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 2_0
+15:06:37.941 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-2_0
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:37.941 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:37.941 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer, transactionalId=avro-user-benchs-app-2_0] Instantiated a transactional producer.
+15:06:37.942 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer, transactionalId=avro-user-benchs-app-2_0] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:37.942 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer, transactionalId=avro-user-benchs-app-2_0] Overriding the default acks to all since idempotence is enabled.
+15:06:37.943 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:37.943 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:37.943 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000397943
+15:06:37.943 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer, transactionalId=avro-user-benchs-app-2_0] ProducerId set to -1 with epoch -1
+15:06:38.056 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer, transactionalId=avro-user-benchs-app-2_0] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.064 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_0-producer, transactionalId=avro-user-benchs-app-2_0] ProducerId set to 1003 with epoch 0
+15:06:38.064 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 1_2
+15:06:38.064 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-1_2
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.065 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.065 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Instantiated a transactional producer.
+15:06:38.066 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.066 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Overriding the default acks to all since idempotence is enabled.
+15:06:38.066 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.066 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.066 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398066
+15:06:38.067 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] ProducerId set to -1 with epoch -1
+15:06:38.181 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.186 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] ProducerId set to 1004 with epoch 0
+15:06:38.187 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 2_1
+15:06:38.187 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-2_1
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.188 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.188 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer, transactionalId=avro-user-benchs-app-2_1] Instantiated a transactional producer.
+15:06:38.189 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer, transactionalId=avro-user-benchs-app-2_1] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.189 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer, transactionalId=avro-user-benchs-app-2_1] Overriding the default acks to all since idempotence is enabled.
+15:06:38.189 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.189 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.189 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398189
+15:06:38.190 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer, transactionalId=avro-user-benchs-app-2_1] ProducerId set to -1 with epoch -1
+15:06:38.303 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer, transactionalId=avro-user-benchs-app-2_1] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.311 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_1-producer, transactionalId=avro-user-benchs-app-2_1] ProducerId set to 2 with epoch 0
+15:06:38.311 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 3_0
+15:06:38.312 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-3_0
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.312 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.312 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer, transactionalId=avro-user-benchs-app-3_0] Instantiated a transactional producer.
+15:06:38.313 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer, transactionalId=avro-user-benchs-app-3_0] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.313 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer, transactionalId=avro-user-benchs-app-3_0] Overriding the default acks to all since idempotence is enabled.
+15:06:38.313 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.313 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.313 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398313
+15:06:38.314 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer, transactionalId=avro-user-benchs-app-3_0] ProducerId set to -1 with epoch -1
+15:06:38.438 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer, transactionalId=avro-user-benchs-app-3_0] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.444 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_0-producer, transactionalId=avro-user-benchs-app-3_0] ProducerId set to 1005 with epoch 0
+15:06:38.445 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 2_2
+15:06:38.445 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-2_2
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.445 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.446 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer, transactionalId=avro-user-benchs-app-2_2] Instantiated a transactional producer.
+15:06:38.447 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer, transactionalId=avro-user-benchs-app-2_2] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.447 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer, transactionalId=avro-user-benchs-app-2_2] Overriding the default acks to all since idempotence is enabled.
+15:06:38.447 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.447 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.447 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398447
+15:06:38.448 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer, transactionalId=avro-user-benchs-app-2_2] ProducerId set to -1 with epoch -1
+15:06:38.563 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer, transactionalId=avro-user-benchs-app-2_2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.570 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-2_2-producer, transactionalId=avro-user-benchs-app-2_2] ProducerId set to 2002 with epoch 0
+15:06:38.570 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 3_1
+15:06:38.571 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-3_1
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.571 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.571 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer, transactionalId=avro-user-benchs-app-3_1] Instantiated a transactional producer.
+15:06:38.572 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer, transactionalId=avro-user-benchs-app-3_1] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.572 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer, transactionalId=avro-user-benchs-app-3_1] Overriding the default acks to all since idempotence is enabled.
+15:06:38.573 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.573 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.573 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398573
+15:06:38.574 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer, transactionalId=avro-user-benchs-app-3_1] ProducerId set to -1 with epoch -1
+15:06:38.688 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer, transactionalId=avro-user-benchs-app-3_1] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.696 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_1-producer, transactionalId=avro-user-benchs-app-3_1] ProducerId set to 3 with epoch 0
+15:06:38.697 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 4_0
+15:06:38.697 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-4_0
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.697 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.697 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] Instantiated a transactional producer.
+15:06:38.698 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.698 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] Overriding the default acks to all since idempotence is enabled.
+15:06:38.698 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.699 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.699 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398698
+15:06:38.699 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] ProducerId set to -1 with epoch -1
+15:06:38.809 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.834 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] ProducerId set to 2003 with epoch 0
+15:06:38.834 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 3_2
+15:06:38.835 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-3_2
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.835 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.835 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer, transactionalId=avro-user-benchs-app-3_2] Instantiated a transactional producer.
+15:06:38.836 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer, transactionalId=avro-user-benchs-app-3_2] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.836 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer, transactionalId=avro-user-benchs-app-3_2] Overriding the default acks to all since idempotence is enabled.
+15:06:38.836 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.836 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.836 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398836
+15:06:38.836 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer, transactionalId=avro-user-benchs-app-3_2] ProducerId set to -1 with epoch -1
+15:06:38.947 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer, transactionalId=avro-user-benchs-app-3_2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:38.961 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-3_2-producer, transactionalId=avro-user-benchs-app-3_2] ProducerId set to 2004 with epoch 0
+15:06:38.962 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 4_1
+15:06:38.962 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-4_1
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:38.962 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:38.962 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer, transactionalId=avro-user-benchs-app-4_1] Instantiated a transactional producer.
+15:06:38.963 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer, transactionalId=avro-user-benchs-app-4_1] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:38.963 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer, transactionalId=avro-user-benchs-app-4_1] Overriding the default acks to all since idempotence is enabled.
+15:06:38.963 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:38.963 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:38.963 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000398963
+15:06:38.964 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer, transactionalId=avro-user-benchs-app-4_1] ProducerId set to -1 with epoch -1
+15:06:39.075 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer, transactionalId=avro-user-benchs-app-4_1] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:39.082 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_1-producer, transactionalId=avro-user-benchs-app-4_1] ProducerId set to 1006 with epoch 0
+15:06:39.083 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Creating producer client for task 4_2
+15:06:39.083 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = true
+	interceptor.classes = [io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor]
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = avro-user-benchs-app-4_2
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:39.083 [ERROR] i.c.m.c.i.MonitoringProducerInterceptor - setting transactional.id not supported. disabling monitoring
+15:06:39.083 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer, transactionalId=avro-user-benchs-app-4_2] Instantiated a transactional producer.
+15:06:39.084 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer, transactionalId=avro-user-benchs-app-4_2] Overriding the default retries config to the recommended value of 2147483647 since the idempotent producer is enabled.
+15:06:39.084 [INFO ] o.a.k.c.p.KafkaProducer - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer, transactionalId=avro-user-benchs-app-4_2] Overriding the default acks to all since idempotence is enabled.
+15:06:39.084 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:39.084 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:39.084 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000399084
+15:06:39.085 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer, transactionalId=avro-user-benchs-app-4_2] ProducerId set to -1 with epoch -1
+15:06:39.199 [INFO ] o.a.k.c.Metadata - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer, transactionalId=avro-user-benchs-app-4_2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:39.205 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_2-producer, transactionalId=avro-user-benchs-app-4_2] ProducerId set to 4 with epoch 0
+15:06:39.205 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] partition assignment took 3682 ms.
+	current active tasks: [0_0, 1_0, 0_1, 1_1, 0_2, 2_0, 1_2, 2_1, 3_0, 2_2, 3_1, 4_0, 3_2, 4_1, 4_2]
+	current standby tasks: []
+	previous active tasks: []
+
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-0
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-1
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-2
+15:06:39.222 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-0
+15:06:39.224 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-0
+15:06:39.227 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-0
+15:06:39.741 [INFO ] o.a.k.s.s.i.RocksDBTimestampedStore - Opening store user_avro_avro-benchs-aggregate-AGGREGATE-STATE-STORE-0000000002 in regular mode
+15:06:39.749 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-1
+15:06:39.750 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-1
+15:06:39.784 [INFO ] o.a.k.s.s.i.RocksDBTimestampedStore - Opening store user_avro_avro-benchs-aggregate-AGGREGATE-STATE-STORE-0000000002 in regular mode
+15:06:39.787 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0
+15:06:39.788 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-0
+15:06:39.792 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2
+15:06:39.793 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-2
+15:06:39.821 [INFO ] o.a.k.s.s.i.RocksDBTimestampedStore - Opening store user_avro_avro-benchs-aggregate-AGGREGATE-STATE-STORE-0000000002 in regular mode
+15:06:39.823 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1
+15:06:39.824 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-1
+15:06:39.827 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-0
+15:06:39.829 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0
+15:06:39.851 [INFO ] o.a.k.s.s.i.RocksDBTimestampedStore - Opening store KSTREAM-REDUCE-STATE-STORE-0000000007 in regular mode
+15:06:39.853 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-2
+15:06:39.854 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2
+15:06:39.856 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1
+15:06:39.857 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-1
+15:06:39.885 [INFO ] o.a.k.s.s.i.RocksDBTimestampedStore - Opening store KSTREAM-REDUCE-STATE-STORE-0000000007 in regular mode
+15:06:39.888 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2
+15:06:39.889 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-2
+15:06:39.913 [INFO ] o.a.k.s.s.i.RocksDBTimestampedStore - Opening store KSTREAM-REDUCE-STATE-STORE-0000000007 in regular mode
+15:06:39.920 [INFO ] o.a.k.c.Metadata - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-restore-consumer, groupId=null] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:39.964 [INFO ] o.a.k.c.c.KafkaConsumer - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+15:06:40.003 [INFO ] o.a.k.c.c.KafkaConsumer - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+15:06:40.003 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+15:06:40.004 [INFO ] o.a.k.s.KafkaStreams - stream-client [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40] State transition from REBALANCING to RUNNING
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-0
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-1
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2
+15:06:40.007 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-2
+15:06:40.008 [INFO ] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Found no committed offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-0
+15:06:40.013 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-0 to offset 0.
+15:06:40.013 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-2 to offset 0.
+15:06:40.013 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1 to offset 0.
+15:06:40.013 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-1 to offset 0.
+15:06:40.013 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2 to offset 0.
+15:06:40.013 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0 to offset 0.
+15:06:40.014 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-2 to offset 0.
+15:06:40.014 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-0 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-2 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-1 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-2 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-1 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-0 to offset 0.
+15:06:40.017 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-1 to offset 0.
+15:06:40.018 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_REQUEST-0 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000012-repartition-1 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-AGGREGATE-2 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE-0 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-0 to offset 0.
+15:06:40.019 [INFO ] o.a.k.c.c.i.SubscriptionState - [Consumer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-consumer, groupId=avro-user-benchs-app] Resetting offset for partition user_avro_avro-benchs-aggregate-COMMAND_RESPONSE_TOPIC_MAP-1 to offset 0.
+15:06:45.040 [INFO ] i.s.k.i.s.EventSourcedStreamsApp - Streams app stable for 5 seconds. Considered up.
+Simulation io.simplesource.benchs.it.example.AvroSimulationExample started...
+15:06:45.084 [INFO ] i.g.c.s.w.ConsoleDataWriter - Initializing
+15:06:45.084 [INFO ] i.g.c.s.w.LogFileDataWriter - Initializing
+15:06:45.088 [INFO ] i.g.c.s.w.ConsoleDataWriter - Initialized
+15:06:45.092 [INFO ] i.g.c.s.w.LogFileDataWriter - Initialized
+15:06:45.837 [INFO ] i.c.m.c.i.MonitoringProducerInterceptor - creating interceptor
+15:06:45.873 [INFO ] i.c.m.c.i.MonitoringInterceptorConfig - MonitoringInterceptorConfig values: 
+	confluent.monitoring.interceptor.publishMs = 15000
+	confluent.monitoring.interceptor.topic = _confluent-monitoring
+
+15:06:45.901 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = confluent.monitoring.interceptor.producer-2
+	compression.type = lz4
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 500
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 10485760
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 10
+	retry.backoff.ms = 500
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:45.903 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:45.904 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:45.904 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000405903
+15:06:45.905 [INFO ] i.c.m.c.i.MonitoringInterceptor - interceptor=confluent.monitoring.interceptor.producer-2 created for client_id=producer-2 client_type=PRODUCER session= cluster=-YMVOfipSielpzQlmuiDng
+15:06:46.033 [INFO ] i.c.m.c.i.MonitoringProducerInterceptor - creating interceptor
+15:06:46.033 [INFO ] i.c.m.c.i.MonitoringInterceptorConfig - MonitoringInterceptorConfig values: 
+	confluent.monitoring.interceptor.publishMs = 15000
+	confluent.monitoring.interceptor.topic = _confluent-monitoring
+
+15:06:46.034 [INFO ] o.a.k.c.p.ProducerConfig - ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [kafka-1:9092, kafka-2:19092, kafka-3:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = confluent.monitoring.interceptor.producer-1
+	compression.type = lz4
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 500
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 10485760
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 10
+	retry.backoff.ms = 500
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+15:06:46.036 [INFO ] o.a.k.c.u.AppInfoParser - Kafka version: 5.3.1-ce
+15:06:46.036 [INFO ] o.a.k.c.u.AppInfoParser - Kafka commitId: fa27711799029b98
+15:06:46.036 [INFO ] o.a.k.c.u.AppInfoParser - Kafka startTimeMs: 1575000406036
+15:06:46.036 [INFO ] i.c.m.c.i.MonitoringInterceptor - interceptor=confluent.monitoring.interceptor.producer-1 created for client_id=producer-1 client_type=PRODUCER session= cluster=-YMVOfipSielpzQlmuiDng
+15:06:46.432 [INFO ] o.a.k.c.Metadata - [Producer clientId=confluent.monitoring.interceptor.producer-2] Cluster ID: -YMVOfipSielpzQlmuiDng
+15:06:46.548 [INFO ] o.a.k.c.Metadata - [Producer clientId=confluent.monitoring.interceptor.producer-1] Cluster ID: -YMVOfipSielpzQlmuiDng
+
+================================================================================
+2019-11-29 15:06:50                                           5s elapsed
+---- Requests ------------------------------------------------------------------
+> Global                                                   (OK=686    KO=0     )
+> Avro Command 1: publishCommand                           (OK=686    KO=0     )
+
+---- Avro Scenario 0 -----------------------------------------------------------
+[-                                                                         ]  0%
+          waiting: 99169  / active: 831    / done: 0     
+================================================================================
+
+
+================================================================================
+2019-11-29 15:06:55                                          10s elapsed
+---- Requests ------------------------------------------------------------------
+> Global                                                   (OK=1642   KO=0     )
+> Avro Command 1: publishCommand                           (OK=1642   KO=0     )
+
+---- Avro Scenario 0 -----------------------------------------------------------
+[--                                                                        ]  0%
+          waiting: 98336  / active: 1664   / done: 0     
+================================================================================
+
+15:06:56.299 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] Resetting sequence number of batch with current sequence 2 for partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2 to 0
+15:06:56.299 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-4_0-producer, transactionalId=avro-user-benchs-app-4_0] Got error produce response with correlation id 26 on topic-partition avro-user-benchs-app-KSTREAM-MAPVALUES-0000000021-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+
+================================================================================
+2019-11-29 15:07:00                                          15s elapsed
+---- Requests ------------------------------------------------------------------
+> Global                                                   (OK=2392   KO=0     )
+> Avro Command 1: publishCommand                           (OK=2392   KO=0     )
+
+---- Avro Scenario 0 -----------------------------------------------------------
+[--                                                                        ]  0%
+          waiting: 97503  / active: 2497   / done: 0     
+================================================================================
+
+15:07:02.892 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 4 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1 to 0
+15:07:02.892 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 30 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:04.215 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 6 for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2 to 0
+15:07:04.215 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 40 on topic-partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:04.220 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 6 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2 to 0
+15:07:04.220 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 39 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:04.816 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Resetting sequence number of batch with current sequence 6 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2 to 0
+15:07:04.816 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Got error produce response with correlation id 47 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+
+================================================================================
+2019-11-29 15:07:05                                          20s elapsed
+---- Requests ------------------------------------------------------------------
+> Global                                                   (OK=3323   KO=0     )
+> Avro Command 1: publishCommand                           (OK=3323   KO=0     )
+
+---- Avro Scenario 0 -----------------------------------------------------------
+[---                                                                       ]  0%
+          waiting: 96669  / active: 3331   / done: 0     
+================================================================================
+
+15:07:05.893 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 2 for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0 to 0
+15:07:05.893 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 51 on topic-partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:05.899 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 2 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0 to 0
+15:07:05.899 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 50 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:07.967 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Resetting sequence number of batch with current sequence 72 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0 to 0
+15:07:07.967 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Got error produce response with correlation id 64 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-0, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:07.970 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Resetting sequence number of batch with current sequence 71 for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1 to 0
+15:07:07.970 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Got error produce response with correlation id 63 on topic-partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-1, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:07.971 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Resetting sequence number of batch with current sequence 71 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1 to 0
+15:07:07.971 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Got error produce response with correlation id 62 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-1, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:07.971 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Resetting sequence number of batch with current sequence 72 for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0 to 0
+15:07:07.971 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Got error produce response with correlation id 62 on topic-partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-0, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:09.576 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Resetting sequence number of batch with current sequence 60 for partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2 to 0
+15:07:09.576 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_1-producer, transactionalId=avro-user-benchs-app-1_1] Got error produce response with correlation id 77 on topic-partition avro-user-benchs-app-KSTREAM-KEY-SELECT-0000000037-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+
+================================================================================
+2019-11-29 15:07:10                                          25s elapsed
+---- Requests ------------------------------------------------------------------
+> Global                                                   (OK=4249   KO=375   )
+> Avro Command 1: publishCommand                           (OK=4130   KO=0     )
+> Avro Command 2: publishAndQueryCommand                   (OK=119    KO=375   )
+---- Errors --------------------------------------------------------------------
+> Timeout after PT20S                                               375 (100.0%)
+
+---- Avro Scenario 0 -----------------------------------------------------------
+[---                                                                       ]  0%
+          waiting: 95836  / active: 3670   / done: 494   
+================================================================================
+
+15:07:11.078 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 244 for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2 to 0
+15:07:11.078 [INFO ] o.a.k.c.p.i.TransactionManager - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Resetting sequence number of batch with current sequence 395 for partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2 to 151
+15:07:11.078 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 92 on topic-partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:11.079 [WARN ] o.a.k.c.p.i.Sender - [Producer clientId=avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1-1_2-producer, transactionalId=avro-user-benchs-app-1_2] Got error produce response with correlation id 95 on topic-partition avro-user-benchs-app-KSTREAM-REDUCE-STATE-STORE-0000000007-repartition-2, retrying (2147483646 attempts left). Error: UNKNOWN_PRODUCER_ID
+15:07:12.454 [INFO ] i.s.k.i.s.EventSourcedStreamsApp - Kafka Streams [org.apache.kafka.streams.KafkaStreams@4293bf46] is shutting down
+15:07:12.456 [INFO ] i.s.k.i.c.KafkaRequestAPI - Request API shutting down
+15:07:12.458 [INFO ] o.a.k.s.KafkaStreams - stream-client [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40] State transition from RUNNING to PENDING_SHUTDOWN
+15:07:12.461 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Informed to shut down
+15:07:12.462 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] State transition from RUNNING to PENDING_SHUTDOWN
+
+[warn] Canceling execution...
+15:07:12.603 [INFO ] o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-1, groupId=response_consumer_e703f4a6] Member consumer-1-f826e0bd-c691-41dc-88d6-01a6f785f877 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null)
+[error] Total time: 41 s, completed 29/11/2019 3:07:12 PM
+15:07:13.007 [INFO ] o.a.k.s.p.i.StreamThread - stream-thread [avro-user-benchs-app-81546691-3a5f-4f3a-bddc-c8a648e6ba40-StreamThread-1] Shutting down
