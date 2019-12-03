@@ -46,9 +46,9 @@ services:
       KAFKA_JMX_PORT: 9997
       KAFKA_JMX_HOSTNAME: kafka-1
     labels:
-      com.datadoghq.ad.check_names: '["kafka", "kafka_consumer"]'
-      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}, {}]'
-      com.datadoghq.ad.instances: '[{"host": "kafka-1", "port": 9997, "name": "kafka-1"}, {"kafka_connect_str": "PLAINTEXT://kafka-1:39092,PLAINTEXT://kafka-2:49092,PLAINTEXT://kafka-3:59092"}]'
+      com.datadoghq.ad.check_names: '["kafka"]'
+      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}]'
+      com.datadoghq.ad.instances: '[{"host": "kafka-1", "port": 9997, "name": "kafka-1"}]'
       com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}]'
 
   kafka-2:
@@ -74,9 +74,9 @@ services:
       KAFKA_JMX_PORT: 9998
       KAFKA_JMX_HOSTNAME: kafka-2
     labels:
-      com.datadoghq.ad.check_names: '["kafka", "kafka_consumer"]'
-      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}, {}]'
-      com.datadoghq.ad.instances: '[{"host": "kafka-2", "port": 9998, "name": "kafka-2"}, {"kafka_connect_str": "PLAINTEXT://kafka-1:39092,PLAINTEXT://kafka-2:49092,PLAINTEXT://kafka-3:59092"}]'
+      com.datadoghq.ad.check_names: '["kafka"]'
+      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}]'
+      com.datadoghq.ad.instances: '[{"host": "kafka-2", "port": 9998, "name": "kafka-2"}]'
       com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}]'
 
   kafka-3:
@@ -102,9 +102,9 @@ services:
       KAFKA_JMX_PORT: 9999
       KAFKA_JMX_HOSTNAME: kafka-3
     labels:
-      com.datadoghq.ad.check_names: '["kafka", "kafka_consumer"]'
-      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}, {}]'
-      com.datadoghq.ad.instances: '[{"host": "kafka-3", "port": 9999, "name": "kafka-3"}, {"kafka_connect_str": "PLAINTEXT://kafka-1:39092,PLAINTEXT://kafka-2:49092,PLAINTEXT://kafka-3:59092"}]'
+      com.datadoghq.ad.check_names: '["kafka"]'
+      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}]'
+      com.datadoghq.ad.instances: '[{"host": "kafka-3", "port": 9999, "name": "kafka-3"}]'
       com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}]'
 
   schema-registry:
@@ -131,7 +131,7 @@ services:
       - kafka-2
       - kafka-3
     ports:
-      - 8126:8126
+      - 127.0.0.1:8127:8126/tcp
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /proc/:/host/proc/:ro
@@ -143,7 +143,6 @@ services:
       DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL: "true"
       DD_AC_EXCLUDE: "name:datadog-agent"
       DD_APM_ENABLED: "true"
-      DD_APM_NON_LOCAL_TRAFFIC: "true"
 
 #  control-center:
 #    image: confluentinc/cp-enterprise-control-center:5.3.1-1
