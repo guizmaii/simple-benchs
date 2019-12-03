@@ -1,5 +1,3 @@
-import sbt.Def
-
 ThisBuild / organization := "io.simplesource"
 ThisBuild / scalaVersion := "2.12.10"
 ThisBuild / version := "0.1.0-SNAPSHOT"
@@ -17,10 +15,28 @@ lazy val root = (project in file("."))
   .aggregate(benchs)
   .dependsOn(benchs)
 
+def datadogAgentJavaOptions(baseDirectory: File) = List(
+  s"-javaagent:${baseDirectory}/datadog/dd-java-agent.jar",
+  "-Ddd.service.name=simple-benchs",
+  "-Ddd.agent.host=127.0.0.1",
+  "-Ddd.agent.port=8127",
+  "-Ddd.trace.agent.port=8128",
+  "-Ddd.trace.enabled=true",
+  "-Ddd.integration.kafka.enabled=true",
+  "-Ddd.integration.kafka-streams.enabled=true",
+  "-Ddd.trace.analytics.enabled=true",
+  "-Ddd.kafka.analytics.enabled=true",
+  "-Ddd.kafka-streams.analytics.enabled=true",
+  "-Ddd.jmxfetch.enabled=true",
+  "-Ddd.logs.injection=true"
+)
+
 lazy val benchs =
   project
     .enablePlugins(GatlingPlugin)
-    .settings(resolvers += Resolver.mavenLocal)
+    .settings(
+      Gatling / javaOptions := overrideDefaultJavaOptions(datadogAgentJavaOptions(baseDirectory.value): _*),
+    )
     .settings(disableScalacFlag("-Ywarn-dead-code"))
     .settings(
       resolvers += Resolver.mavenLocal,
