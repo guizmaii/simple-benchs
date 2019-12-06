@@ -46,10 +46,10 @@ services:
       KAFKA_JMX_PORT: 9997
       KAFKA_JMX_HOSTNAME: kafka-1
     labels:
-      com.datadoghq.ad.check_names: '["kafka"]'
-      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}]'
-      com.datadoghq.ad.instances: '[{"host": "kafka-1", "port": 9997, "name": "kafka-1"}]'
-      com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}]'
+      com.datadoghq.ad.check_names: '["kafka", "kafka_consumer"]'
+      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}, {}]'
+      com.datadoghq.ad.instances: '[{"host": "kafka-1", "port": 9997, "name": "kafka-1"}, {"kafka_connect_str": ["kafka-1:39092"], "monitor_unlisted_consumer_groups": true, "zk_connect_str": ["zookeeper:2181"], "kafka_consumer_offsets": true}]'
+      com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}, {}]'
 
   kafka-2:
     image: confluentinc/cp-enterprise-kafka:5.3.1-1
@@ -74,10 +74,10 @@ services:
       KAFKA_JMX_PORT: 9998
       KAFKA_JMX_HOSTNAME: kafka-2
     labels:
-      com.datadoghq.ad.check_names: '["kafka"]'
-      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}]'
-      com.datadoghq.ad.instances: '[{"host": "kafka-2", "port": 9998, "name": "kafka-2"}]'
-      com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}]'
+      com.datadoghq.ad.check_names: '["kafka", "kafka_consumer"]'
+      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}, {}]'
+      com.datadoghq.ad.instances: '[{"host": "kafka-2", "port": 9998, "name": "kafka-2"}, {"kafka_connect_str": ["kafka-2:49092"], "monitor_unlisted_consumer_groups": true, "zk_connect_str": ["zookeeper:2181"], "kafka_consumer_offsets": true}]'
+      com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}, {}]'
 
   kafka-3:
     image: confluentinc/cp-enterprise-kafka:5.3.1-1
@@ -102,10 +102,10 @@ services:
       KAFKA_JMX_PORT: 9999
       KAFKA_JMX_HOSTNAME: kafka-3
     labels:
-      com.datadoghq.ad.check_names: '["kafka"]'
-      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}]'
-      com.datadoghq.ad.instances: '[{"host": "kafka-3", "port": 9999, "name": "kafka-3"}]'
-      com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}]'
+      com.datadoghq.ad.check_names: '["kafka", "kafka_consumer"]'
+      com.datadoghq.ad.init_configs: '[{"is_jmx": true, "collect_default_metrics": true}, {}]'
+      com.datadoghq.ad.instances: '[{"host": "kafka-3", "port": 9999, "name": "kafka-3"}, {"kafka_connect_str": ["kafka-3:59092"], "monitor_unlisted_consumer_groups": true, "zk_connect_str": ["zookeeper:2181"], "kafka_consumer_offsets": true}]'
+      com.datadoghq.ad.logs: '[{"type": "file", "path": "/var/log/kafka/server.log", "source": "kafka", "service": "simple-benchs"}, {}]'
 
   schema-registry:
     image: confluentinc/cp-schema-registry:5.3.1-1

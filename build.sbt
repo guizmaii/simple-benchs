@@ -31,11 +31,17 @@ def datadogAgentJavaOptions(baseDirectory: File) = List(
   "-Ddd.logs.injection=true"
 )
 
+def asyncprofilerJavaOptions(baseDirectory: File) = List(
+  "-XX:+UnlockDiagnosticVMOptions",
+  "-XX:+DebugNonSafepoints",
+  s"""-agentpath:${baseDirectory}/async-profiler/build/libasyncProfiler.so=start,file=/Users/jules/simplemachines/workspace/simple-benchs/profile5.txt,threads,ann"""
+)
+
 lazy val benchs =
   project
     .enablePlugins(GatlingPlugin)
     .settings(
-      Gatling / javaOptions := overrideDefaultJavaOptions(datadogAgentJavaOptions(baseDirectory.value): _*),
+      Gatling / javaOptions := overrideDefaultJavaOptions(asyncprofilerJavaOptions(baseDirectory.value): _*)
     )
     .settings(disableScalacFlag("-Ywarn-dead-code"))
     .settings(
@@ -43,9 +49,8 @@ lazy val benchs =
       resolvers += "confluent" at "https://packages.confluent.io/maven/",
       addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
       libraryDependencies ++= Seq(
-        "io.simplesource"        % "simplesource-command-kafka" % "0.2.8-SNAPSHOT",
-        "io.simplesource"        % "user"                       % "0.1.0-SNAPSHOT",
-        "com.typesafe"           % "config"                     % "1.4.0",
+        "io.simplesource" % "user"                 % "0.1.0-SNAPSHOT",
+        "com.typesafe"    % "config"               % "1.4.0"
       ) ++ gatling
     )
 

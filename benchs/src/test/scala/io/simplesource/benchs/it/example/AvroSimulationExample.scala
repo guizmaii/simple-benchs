@@ -22,23 +22,29 @@ class AvroSimulationExample extends Simulation {
 
   val simpleSourceProtocol: SimpleSourceProtocolBuilder = simpleSource.withApp(app)
 
-  val scn: ScenarioBuilder =
-    scenario("Avro Scenario 0") // A scenario is a chain of requests and pauses
+  val scn0: ScenarioBuilder =
+    scenario("Avro Scenario - PublishCommand") // A scenario is a chain of requests and pauses
       .exec(
-        stream("Avro Stream 1")
+        stream("publishCommand Stream")
           .publishCommand("Avro Command 1: publishCommand")(commandAPI, newRandomUserKey, constantCommand, Sequence.first)
-      )
+      ).pause(1.minute)
+
+  val scn1 =
+    scenario("Avro Scenario - publishAndQueryCommand") // A scenario is a chain of requests and pauses
       .exec {
         import scala.compat.java8.DurationConverters._
 
-        stream("Avro Stream 2").publishAndQueryCommand("Avro Command 2: publishAndQueryCommand")(
+        stream("publishAndQueryCommand Stream").publishAndQueryCommand("Avro Command 2: publishAndQueryCommand")(
           commandAPI,
           newRandomUserKey,
           constantCommand,
           Sequence.first,
           20.seconds.toJava
         )
-      }
+      }.pause(1.minute)
 
-  setUp(scn.inject(rampUsers(100000) during 10.minutes).protocols(simpleSourceProtocol.build()))
+  setUp(
+    scn1.inject(rampConcurrentUsers( 0) to 1000 during 30.minutes),
+  ).protocols(simpleSourceProtocol.build())
 }
+

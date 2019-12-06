@@ -68,6 +68,7 @@ object Config {
     val commandAPI: CommandAPI[UserKey, UserCommand] =
       new EventSourcedClient()
         .withKafkaConfig(_.withKafkaBootstrap(bootstrapServers).build())
+        .withScheduler(monix.execution.Scheduler.global)
         .createCommandAPI { builder: CommandAPIBuilder[UserKey, UserCommand] =>
           builder
             .withTopicSpec(3, 3)

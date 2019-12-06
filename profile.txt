@@ -1,0 +1,3266 @@
+--- Execution profile ---
+Total samples       : 4894
+unknown_Java        : 42 (0.86%)
+not_walkable_Java   : 9 (0.18%)
+
+Frame buffer usage  : 10.3757%
+
+--- 520000000 ns (1.06%), 52 samples
+  [ 0] __psynch_cvwait
+  [ 1] Parker::park(bool, long)
+  [ 2] Unsafe_Park
+  [ 3] sun.misc.Unsafe.park
+  [ 4] java.util.concurrent.locks.LockSupport.parkNanos
+  [ 5] java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos
+  [ 6] java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take
+  [ 7] java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take
+  [ 8] java.util.concurrent.ThreadPoolExecutor.getTask
+  [ 9] java.util.concurrent.ThreadPoolExecutor.runWorker
+  [10] [unknown]
+  [11] java.lang.Thread.run
+  [12] [dd-cleaner tid=25859]
+
+--- 330000000 ns (0.67%), 33 samples
+  [ 0] __psynch_cvwait
+  [ 1] Parker::park(bool, long)
+  [ 2] Unsafe_Park
+  [ 3] sun.misc.Unsafe.park
+  [ 4] java.util.concurrent.locks.LockSupport.parkNanos
+  [ 5] com.lmax.disruptor.SleepingWaitStrategy.applyWaitMethod
+  [ 6] com.lmax.disruptor.SleepingWaitStrategy.waitFor
+  [ 7] com.lmax.disruptor.ProcessingSequenceBarrier.waitFor
+  [ 8] com.lmax.disruptor.BatchEventProcessor.processEvents
+  [ 9] com.lmax.disruptor.BatchEventProcessor.run
+  [10] java.lang.Thread.run
+  [11] [dd-trace-disruptor tid=36355]
+
+--- 280000000 ns (0.57%), 28 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] os::sleep(Thread*, long, bool)
+  [ 3] JVM_Sleep
+  [ 4] java.lang.Thread.sleep
+  [ 5] akka.actor.LightArrayRevolverScheduler.waitNanos
+  [ 6] akka.actor.LightArrayRevolverScheduler$$anon$3.nextTick
+  [ 7] akka.actor.LightArrayRevolverScheduler$$anon$3.run
+  [ 8] java.lang.Thread.run
+  [ 9] [GatlingSystem-scheduler-1 tid=43779]
+
+--- 270000000 ns (0.55%), 27 samples
+  [ 0] writev
+  [ 1] sun.nio.ch.FileDispatcherImpl.writev0
+  [ 2] sun.nio.ch.SocketDispatcher.writev
+  [ 3] sun.nio.ch.IOUtil.write
+  [ 4] sun.nio.ch.SocketChannelImpl.write
+  [ 5] java.nio.channels.SocketChannel.write
+  [ 6] org.apache.kafka.common.network.PlaintextTransportLayer.write
+  [ 7] org.apache.kafka.common.network.ByteBufferSend.writeTo
+  [ 8] org.apache.kafka.common.network.KafkaChannel.send
+  [ 9] org.apache.kafka.common.network.KafkaChannel.write
+  [10] org.apache.kafka.common.network.Selector.pollSelectionKeys
+  [11] org.apache.kafka.common.network.Selector.poll
+  [12] org.apache.kafka.clients.NetworkClient.poll
+  [13] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [14] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.pollNoWakeup
+  [15] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.commitOffsetsAsync
+  [16] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.doAutoCommitOffsetsAsync
+  [17] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.maybeAutoCommitOffsetsAsync
+  [18] org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll
+  [19] org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded
+  [20] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [21] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [22] io.simplesource.kafka.internal.client.KafkaConsumerRunner$RunnableConsumer.run
+  [23] java.lang.Thread.run
+  [24] [Thread-7 tid=47107]
+
+--- 250000000 ns (0.51%), 25 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=28419]
+
+--- 200000000 ns (0.41%), 20 samples
+  [ 0] kevent
+  [ 1] sun.nio.ch.KQueueArrayWrapper.register0
+  [ 2] sun.nio.ch.KQueueArrayWrapper.updateRegistrations
+  [ 3] sun.nio.ch.KQueueArrayWrapper.poll
+  [ 4] sun.nio.ch.KQueueSelectorImpl.doSelect
+  [ 5] sun.nio.ch.SelectorImpl.lockAndDoSelect
+  [ 6] sun.nio.ch.SelectorImpl.select
+  [ 7] org.apache.kafka.common.network.Selector.select
+  [ 8] org.apache.kafka.common.network.Selector.poll
+  [ 9] org.apache.kafka.clients.NetworkClient.poll
+  [10] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [11] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [12] org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches
+  [13] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [14] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [15] io.simplesource.kafka.internal.client.KafkaConsumerRunner$RunnableConsumer.run
+  [16] java.lang.Thread.run
+  [17] [Thread-7 tid=47107]
+
+--- 190000000 ns (0.39%), 19 samples
+  [ 0] [unknown_Java]
+  [ 1] [pool-4-thread-1 tid=43523]
+
+--- 130000000 ns (0.27%), 13 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 120000000 ns (0.25%), 12 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28419]
+
+--- 110000000 ns (0.22%), 11 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=28931]
+
+--- 110000000 ns (0.22%), 11 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=28163]
+
+--- 110000000 ns (0.22%), 11 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=29187]
+
+--- 110000000 ns (0.22%), 11 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=33539]
+
+--- 100000000 ns (0.20%), 10 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28419]
+
+--- 100000000 ns (0.20%), 10 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] ServiceThread::service_thread_entry(JavaThread*, Thread*)
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=30979]
+
+--- 100000000 ns (0.20%), 10 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=29443]
+
+--- 100000000 ns (0.20%), 10 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 100000000 ns (0.20%), 10 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=29955]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] kevent
+  [ 1] sun.nio.ch.KQueueArrayWrapper.kevent0
+  [ 2] sun.nio.ch.KQueueArrayWrapper.poll
+  [ 3] sun.nio.ch.KQueueSelectorImpl.doSelect
+  [ 4] sun.nio.ch.SelectorImpl.lockAndDoSelect
+  [ 5] sun.nio.ch.SelectorImpl.select
+  [ 6] org.apache.kafka.common.network.Selector.select
+  [ 7] org.apache.kafka.common.network.Selector.poll
+  [ 8] org.apache.kafka.clients.NetworkClient.poll
+  [ 9] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [10] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [11] org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches
+  [12] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [13] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [14] org.apache.kafka.streams.processor.internals.StreamThread.pollRequests
+  [15] org.apache.kafka.streams.processor.internals.StreamThread.runOnce
+  [16] org.apache.kafka.streams.processor.internals.StreamThread.runLoop
+  [17] org.apache.kafka.streams.processor.internals.StreamThread.run
+  [18] [avro-user-benchs-app-a0e99b10-468d-40ce-977e-4e9ab1fc4786-StreamThread-1 tid=83971]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] kevent
+  [ 1] sun.nio.ch.KQueueArrayWrapper.kevent0
+  [ 2] sun.nio.ch.KQueueArrayWrapper.poll
+  [ 3] sun.nio.ch.KQueueSelectorImpl.doSelect
+  [ 4] sun.nio.ch.SelectorImpl.lockAndDoSelect
+  [ 5] sun.nio.ch.SelectorImpl.select
+  [ 6] org.apache.kafka.common.network.Selector.select
+  [ 7] org.apache.kafka.common.network.Selector.poll
+  [ 8] org.apache.kafka.clients.NetworkClient.poll
+  [ 9] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [10] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [11] org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches
+  [12] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [13] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [14] io.simplesource.kafka.internal.client.KafkaConsumerRunner$RunnableConsumer.run
+  [15] java.lang.Thread.run
+  [16] [Thread-7 tid=47107]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] WatcherThread::sleep() const
+  [ 5] WatcherThread::run()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=31491]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=34563]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 90000000 ns (0.18%), 9 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 80000000 ns (0.16%), 8 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28419]
+
+--- 80000000 ns (0.16%), 8 samples
+  [ 0] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 80000000 ns (0.16%), 8 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+--- 80000000 ns (0.16%), 8 samples
+  [ 0] akka.actor.LightArrayRevolverScheduler$$anon$3.nextTick
+  [ 1] akka.actor.LightArrayRevolverScheduler$$anon$3.run
+  [ 2] java.lang.Thread.run
+  [ 3] [GatlingSystem-scheduler-1 tid=43779]
+
+--- 80000000 ns (0.16%), 8 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 80000000 ns (0.16%), 8 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=28419]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] PhaseIdealLoop::Dominators()
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] IndexSet::initialize(unsigned int)
+  [ 1] PhaseIFG::init(unsigned int)
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28419]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=28931]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] PhaseChaitin::post_allocate_copy_removal()
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=35075]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=5379]
+
+--- 70000000 ns (0.14%), 7 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseConservativeCoalesce::update_ifg(unsigned int, unsigned int, IndexSet*, IndexSet*)
+  [ 2] PhaseConservativeCoalesce::copy_copy(Node*, Node*, Block*, unsigned int)
+  [ 3] PhaseConservativeCoalesce::coalesce(Block*)
+  [ 4] PhaseCoalesce::coalesce_driver()
+  [ 5] PhaseChaitin::Register_Allocate()
+  [ 6] Compile::Code_Gen()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=28163]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseIdealLoop::idom_no_update(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=35075]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=28163]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseChaitin::post_allocate_copy_removal()
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=7939]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28163]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=34563]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] [unknown_Java]
+  [ 1] [main tid=4355]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 1] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 2] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 3] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 4] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 5] Compile::Optimize()
+  [ 6] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 7] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 8] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 9] CompileBroker::compiler_thread_loop()
+  [10] JavaThread::thread_main_inner()
+  [11] JavaThread::run()
+  [12] java_start(Thread*)
+  [13] _pthread_start
+  [14] thread_start
+  [15] [tid=28419]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=33539]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 1] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 2] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 3] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 4] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 5] Compile::Optimize()
+  [ 6] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 7] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 8] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 9] CompileBroker::compiler_thread_loop()
+  [10] JavaThread::thread_main_inner()
+  [11] JavaThread::run()
+  [12] java_start(Thread*)
+  [13] _pthread_start
+  [14] thread_start
+  [15] [tid=28931]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=32771]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=34563]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28419]
+
+--- 60000000 ns (0.12%), 6 samples
+  [ 0] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 1] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 2] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 3] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 4] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 5] Compile::Optimize()
+  [ 6] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 7] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 8] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 9] CompileBroker::compiler_thread_loop()
+  [10] JavaThread::thread_main_inner()
+  [11] JavaThread::run()
+  [12] java_start(Thread*)
+  [13] _pthread_start
+  [14] thread_start
+  [15] [tid=29443]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=9219]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::Dominators()
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseChaitin::post_allocate_copy_removal()
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] RegMask::Size() const
+  [ 1] RegMask::is_misaligned_pair() const
+  [ 2] PhaseChaitin::gather_lrg_masks(bool)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29187]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseChaitin::post_allocate_copy_removal()
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28419]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=10243]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28163]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=6147]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 1] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 2] G1ParScanThreadState::trim_queue()
+  [ 3] G1ParEvacuateFollowersClosure::do_void()
+  [ 4] G1ParTask::work(unsigned int)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=8707]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::build_loop_early(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=33539]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 1] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 2] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 3] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 4] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 5] Compile::Optimize()
+  [ 6] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 7] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 8] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 9] CompileBroker::compiler_thread_loop()
+  [10] JavaThread::thread_main_inner()
+  [11] JavaThread::run()
+  [12] java_start(Thread*)
+  [13] _pthread_start
+  [14] thread_start
+  [15] [tid=33539]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 1] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 2] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 3] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 4] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 5] Compile::Optimize()
+  [ 6] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 7] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 8] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 9] CompileBroker::compiler_thread_loop()
+  [10] JavaThread::thread_main_inner()
+  [11] JavaThread::run()
+  [12] java_start(Thread*)
+  [13] _pthread_start
+  [14] thread_start
+  [15] [tid=28163]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::dom_depth(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=28419]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 1] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 2] G1ParScanThreadState::trim_queue()
+  [ 3] G1ParEvacuateFollowersClosure::do_void()
+  [ 4] G1ParTask::work(unsigned int)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=10243]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=10499]
+
+--- 50000000 ns (0.10%), 5 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=29443]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] JNIMethodBlock::add_method(Method*)
+  [ 1] Method::make_jmethod_id(ClassLoaderData*, Method*)
+  [ 2] InstanceKlass::get_jmethod_id(instanceKlassHandle, methodHandle)
+  [ 3] Method::jmethod_id()
+  [ 4] JvmtiEnv::GetClassMethods(oopDesc*, int*, _jmethodID***)
+  [ 5] jvmti_GetClassMethods
+  [ 6] VM::ClassPrepare(_jvmtiEnv*, JNIEnv_*, _jobject*, _jclass*)
+  [ 7] JvmtiExport::post_class_prepare(JavaThread*, Klass*)
+  [ 8] InstanceKlass::link_class_impl(instanceKlassHandle, bool, Thread*)
+  [ 9] InstanceKlass::link_class_impl(instanceKlassHandle, bool, Thread*)
+  [10] InstanceKlass::link_class(Thread*)
+  [11] InstanceKlass::initialize_impl(instanceKlassHandle, Thread*)
+  [12] InstanceKlass::initialize(Thread*)
+  [13] InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)
+  [14] org.apache.kafka.streams.state.internals.RocksDBStore.openDB
+  [15] org.apache.kafka.streams.state.internals.RocksDBStore.init
+  [16] org.apache.kafka.streams.state.internals.WrappedStateStore.init
+  [17] org.apache.kafka.streams.state.internals.ChangeLoggingKeyValueBytesStore.init
+  [18] org.apache.kafka.streams.state.internals.WrappedStateStore.init
+  [19] org.apache.kafka.streams.state.internals.CachingKeyValueStore.init
+  [20] org.apache.kafka.streams.state.internals.WrappedStateStore.init
+  [21] org.apache.kafka.streams.state.internals.MeteredKeyValueStore.init
+  [22] org.apache.kafka.streams.processor.internals.AbstractTask.registerStateStores
+  [23] org.apache.kafka.streams.processor.internals.StreamTask.initializeStateStores
+  [24] org.apache.kafka.streams.processor.internals.AssignedTasks.initializeNewTasks
+  [25] org.apache.kafka.streams.processor.internals.TaskManager.updateNewAndRestoringTasks
+  [26] org.apache.kafka.streams.processor.internals.StreamThread.runOnce
+  [27] org.apache.kafka.streams.processor.internals.StreamThread.runLoop
+  [28] org.apache.kafka.streams.processor.internals.StreamThread.run
+  [29] [avro-user-benchs-app-a0e99b10-468d-40ce-977e-4e9ab1fc4786-StreamThread-1 tid=83971]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] _platform_memmove$VARIANT$Haswell
+  [ 1] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 2] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 3] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 4] G1ParScanThreadState::trim_queue()
+  [ 5] G1ParEvacuateFollowersClosure::do_void()
+  [ 6] G1ParTask::work(unsigned int)
+  [ 7] GangWorker::loop()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=10499]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseIdealLoop::build_loop_early(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] RegMask::overlap(RegMask const&) const
+  [ 1] IndexSet::lrg_union(unsigned int, unsigned int, unsigned int, PhaseIFG const*, RegMask const&)
+  [ 2] PhaseConservativeCoalesce::copy_copy(Node*, Node*, Block*, unsigned int)
+  [ 3] PhaseConservativeCoalesce::coalesce(Block*)
+  [ 4] PhaseCoalesce::coalesce_driver()
+  [ 5] PhaseChaitin::Register_Allocate()
+  [ 6] Compile::Code_Gen()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=28163]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=29187]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] oopDesc::size()
+  [ 1] CMTask::make_reference_grey(oopDesc*, HeapRegion*)
+  [ 2] InstanceKlass::oop_oop_iterate_nv(oopDesc*, G1CMOopClosure*)
+  [ 3] CMTask::scan_object(oopDesc*)
+  [ 4] CMBitMapClosure::do_bit(unsigned long)
+  [ 5] CMBitMapRO::iterate(BitMapClosure*, MemRegion)
+  [ 6] CMTask::do_marking_step(double, bool, bool)
+  [ 7] CMConcurrentMarkingTask::work(unsigned int)
+  [ 8] GangWorker::loop()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=15619]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=30211]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28419]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28931]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28931]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=29443]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=7427]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] [unknown_Java]
+  [ 1] [avro-user-benchs-app-a0e99b10-468d-40ce-977e-4e9ab1fc4786-StreamThread-1 tid=83971]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] writev
+  [ 1] sun.nio.ch.FileDispatcherImpl.writev0
+  [ 2] sun.nio.ch.SocketDispatcher.writev
+  [ 3] sun.nio.ch.IOUtil.write
+  [ 4] sun.nio.ch.SocketChannelImpl.write
+  [ 5] java.nio.channels.SocketChannel.write
+  [ 6] org.apache.kafka.common.network.PlaintextTransportLayer.write
+  [ 7] org.apache.kafka.common.network.ByteBufferSend.writeTo
+  [ 8] org.apache.kafka.common.network.KafkaChannel.send
+  [ 9] org.apache.kafka.common.network.KafkaChannel.write
+  [10] org.apache.kafka.common.network.Selector.pollSelectionKeys
+  [11] org.apache.kafka.common.network.Selector.poll
+  [12] org.apache.kafka.clients.NetworkClient.poll
+  [13] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [14] org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll
+  [15] org.apache.kafka.clients.consumer.KafkaConsumer.pollForFetches
+  [16] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [17] org.apache.kafka.clients.consumer.KafkaConsumer.poll
+  [18] io.simplesource.kafka.internal.client.KafkaConsumerRunner$RunnableConsumer.run
+  [19] java.lang.Thread.run
+  [20] [Thread-7 tid=47107]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Matcher::find_shared(Node*)
+  [ 1] Matcher::match()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=10243]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] _platform_memmove$VARIANT$Haswell
+  [ 1] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 2] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 3] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 4] G1ParScanThreadState::trim_queue()
+  [ 5] G1ParEvacuateFollowersClosure::do_void()
+  [ 6] G1ParTask::work(unsigned int)
+  [ 7] GangWorker::loop()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=7171]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseIdealLoop::Dominators()
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] SpinPause
+  [ 1] G1ParEvacuateFollowersClosure::do_void()
+  [ 2] ReferenceProcessor::process_phase3(DiscoveredList&, bool, BoolObjectClosure*, OopClosure*, VoidClosure*)
+  [ 3] G1STWRefProcTaskProxy::work(unsigned int)
+  [ 4] GangWorker::loop()
+  [ 5] java_start(Thread*)
+  [ 6] _pthread_start
+  [ 7] thread_start
+  [ 8] [tid=9219]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::elide_copy(Node*, int, Block*, Node_List&, Node_List&, bool)
+  [ 1] PhaseChaitin::post_allocate_copy_removal()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=29443]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] SpinPause
+  [ 1] G1ParEvacuateFollowersClosure::do_void()
+  [ 2] ReferenceProcessor::process_phase3(DiscoveredList&, bool, BoolObjectClosure*, OopClosure*, VoidClosure*)
+  [ 3] G1STWRefProcTaskProxy::work(unsigned int)
+  [ 4] GangWorker::loop()
+  [ 5] java_start(Thread*)
+  [ 6] _pthread_start
+  [ 7] thread_start
+  [ 8] [tid=6659]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseIdealLoop::dom_depth(Node*) const
+  [ 1] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 2] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 3] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 4] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 5] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 6] Compile::Optimize()
+  [ 7] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 8] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=33539]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] SpinPause
+  [ 1] G1ParEvacuateFollowersClosure::do_void()
+  [ 2] ReferenceProcessor::process_phase3(DiscoveredList&, bool, BoolObjectClosure*, OopClosure*, VoidClosure*)
+  [ 3] G1STWRefProcTaskProxy::work(unsigned int)
+  [ 4] GangWorker::loop()
+  [ 5] java_start(Thread*)
+  [ 6] _pthread_start
+  [ 7] thread_start
+  [ 8] [tid=8707]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseIdealLoop::build_loop_tree()
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseIFG::re_insert(unsigned int)
+  [ 2] PhaseChaitin::Select()
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=35075]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] JNIMethodBlock::add_method(Method*)
+  [ 1] Method::make_jmethod_id(ClassLoaderData*, Method*)
+  [ 2] InstanceKlass::get_jmethod_id(instanceKlassHandle, methodHandle)
+  [ 3] Method::jmethod_id()
+  [ 4] JvmtiEnv::GetClassMethods(oopDesc*, int*, _jmethodID***)
+  [ 5] jvmti_GetClassMethods
+  [ 6] VM::ClassPrepare(_jvmtiEnv*, JNIEnv_*, _jobject*, _jclass*)
+  [ 7] JvmtiExport::post_class_prepare(JavaThread*, Klass*)
+  [ 8] InstanceKlass::link_class_impl(instanceKlassHandle, bool, Thread*)
+  [ 9] InstanceKlass::link_class(Thread*)
+  [10] InstanceKlass::initialize_impl(instanceKlassHandle, Thread*)
+  [11] InstanceKlass::initialize(Thread*)
+  [12] InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)
+  [13] org.apache.kafka.streams.state.internals.RocksDBStore.openDB
+  [14] org.apache.kafka.streams.state.internals.RocksDBStore.init
+  [15] org.apache.kafka.streams.state.internals.WrappedStateStore.init
+  [16] org.apache.kafka.streams.state.internals.ChangeLoggingKeyValueBytesStore.init
+  [17] org.apache.kafka.streams.state.internals.WrappedStateStore.init
+  [18] org.apache.kafka.streams.state.internals.CachingKeyValueStore.init
+  [19] org.apache.kafka.streams.state.internals.WrappedStateStore.init
+  [20] org.apache.kafka.streams.state.internals.MeteredKeyValueStore.init
+  [21] org.apache.kafka.streams.processor.internals.AbstractTask.registerStateStores
+  [22] org.apache.kafka.streams.processor.internals.StreamTask.initializeStateStores
+  [23] org.apache.kafka.streams.processor.internals.AssignedTasks.initializeNewTasks
+  [24] org.apache.kafka.streams.processor.internals.TaskManager.updateNewAndRestoringTasks
+  [25] org.apache.kafka.streams.processor.internals.StreamThread.runOnce
+  [26] org.apache.kafka.streams.processor.internals.StreamThread.runLoop
+  [27] org.apache.kafka.streams.processor.internals.StreamThread.run
+  [28] [avro-user-benchs-app-a0e99b10-468d-40ce-977e-4e9ab1fc4786-StreamThread-1 tid=83971]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28931]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=9731]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=35075]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] SpinPause
+  [ 1] G1ParEvacuateFollowersClosure::do_void()
+  [ 2] G1ParPreserveCMReferentsTask::work(unsigned int)
+  [ 3] GangWorker::loop()
+  [ 4] java_start(Thread*)
+  [ 5] _pthread_start
+  [ 6] thread_start
+  [ 7] [tid=10499]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::elide_copy(Node*, int, Block*, Node_List&, Node_List&, bool)
+  [ 1] PhaseChaitin::post_allocate_copy_removal()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=33539]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::elide_copy(Node*, int, Block*, Node_List&, Node_List&, bool)
+  [ 1] PhaseChaitin::post_allocate_copy_removal()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseLive::add_liveout(Block*, IndexSet*, VectorSet&)
+  [ 2] PhaseLive::compute(unsigned int)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Compile::BuildOopMaps()
+  [ 1] Compile::Output()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29443]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=6659]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Compile::BuildOopMaps()
+  [ 1] Compile::Output()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] _res
+  [ 1] os::javaTimeNanos()
+  [ 2] [unknown_Java]
+  [ 3] [pool-4-thread-1 tid=43523]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=34563]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=6659]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] [unknown_Java]
+  [ 1] [Thread-7 tid=47107]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] _platform_memmove$VARIANT$Haswell
+  [ 1] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 2] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 3] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 4] G1ParScanThreadState::trim_queue()
+  [ 5] G1ParEvacuateFollowersClosure::do_void()
+  [ 6] G1ParTask::work(unsigned int)
+  [ 7] GangWorker::loop()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=10243]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::Simplify()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28419]
+
+--- 40000000 ns (0.08%), 4 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28419]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 1] G1ParScanThreadState::trim_queue()
+  [ 2] G1ParEvacuateFollowersClosure::do_void()
+  [ 3] G1ParTask::work(unsigned int)
+  [ 4] GangWorker::loop()
+  [ 5] java_start(Thread*)
+  [ 6] _pthread_start
+  [ 7] thread_start
+  [ 8] [tid=10499]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Compile::BuildOopMaps()
+  [ 1] Compile::Output()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 1] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 2] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 3] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 4] Compile::Optimize()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29187]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] ScopeDesc::sender() const
+  [ 1] create_inline_record(nmethod*)
+  [ 2] JvmtiExport::post_compiled_method_load(nmethod*)
+  [ 3] JvmtiDeferredEvent::post()
+  [ 4] ServiceThread::service_thread_entry(JavaThread*, Thread*)
+  [ 5] JavaThread::thread_main_inner()
+  [ 6] JavaThread::run()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=30979]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::next()
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29187]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=21251]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Node_Backward_Iterator::next()
+  [ 1] PhaseCFG::schedule_late(VectorSet&, Node_List&)
+  [ 2] PhaseCFG::global_code_motion()
+  [ 3] PhaseCFG::do_global_code_motion()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::next()
+  [ 1] PhaseIFG::effective_degree(unsigned int) const
+  [ 2] PhaseIFG::Compute_Effective_Degree()
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28163]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] RegMask::overlap(RegMask const&) const
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Block::end_idx() const
+  [ 1] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=35075]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseIFG::SquareUp()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28163]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] CodeHeap::search_freelist(unsigned long, bool)
+  [ 1] CodeHeap::allocate(unsigned long, bool)
+  [ 2] CodeCache::allocate(int, bool)
+  [ 3] nmethod::new_nmethod(methodHandle, int, int, CodeOffsets*, int, DebugInformationRecorder*, Dependencies*, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, int)
+  [ 4] ciEnv::register_method(ciMethod*, int, CodeOffsets*, int, CodeBuffer*, int, OopMapSet*, ExceptionHandlerTable*, ImplicitExceptionTable*, AbstractCompiler*, int, bool, bool, RTMState)
+  [ 5] Compilation::install_code(int)
+  [ 6] Compilation::compile_method()
+  [ 7] Compilation::Compilation(AbstractCompiler*, ciEnv*, ciMethod*, int, BufferBlob*)
+  [ 8] Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 9] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [10] CompileBroker::compiler_thread_loop()
+  [11] JavaThread::thread_main_inner()
+  [12] JavaThread::run()
+  [13] java_start(Thread*)
+  [14] _pthread_start
+  [15] thread_start
+  [16] [tid=30211]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 1] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 2] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 3] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 4] Compile::Optimize()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=34563]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] RegMask::overlap(RegMask const&) const
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29187]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSet::initialize(unsigned int)
+  [ 1] PhaseIFG::init(unsigned int)
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] sun.security.provider.SHA2.implCompress0
+  [ 1] sun.security.provider.SHA2.implCompress
+  [ 2] sun.security.provider.DigestBase.implCompressMultiBlock0
+  [ 3] sun.security.provider.DigestBase.implCompressMultiBlock
+  [ 4] sun.security.provider.DigestBase.engineUpdate
+  [ 5] java.security.MessageDigest$Delegate.engineUpdate
+  [ 6] java.security.MessageDigest.update
+  [ 7] sun.security.provider.DSA.engineUpdate
+  [ 8] java.security.Signature$Delegate.engineUpdate
+  [ 9] java.security.Signature.update
+  [10] java.security.Signature.update
+  [11] sun.security.pkcs.SignerInfo.verify
+  [12] sun.security.pkcs.PKCS7.verify
+  [13] sun.security.pkcs.PKCS7.verify
+  [14] sun.security.util.SignatureFileVerifier.processImpl
+  [15] sun.security.util.SignatureFileVerifier.process
+  [16] java.util.jar.JarVerifier.processEntry
+  [17] java.util.jar.JarVerifier.update
+  [18] java.util.jar.JarFile.initializeVerifier
+  [19] java.util.jar.JarFile.getInputStream
+  [20] sun.net.www.protocol.jar.JarURLConnection.getInputStream
+  [21] java.net.URL.openStream
+  [22] akka.util.ManifestInfo.liftedTree2$1
+  [23] akka.util.ManifestInfo.<init>
+  [24] akka.util.ManifestInfo$.createExtension
+  [25] akka.util.ManifestInfo$.createExtension
+  [26] akka.actor.ActorSystemImpl.registerExtension
+  [27] akka.actor.ExtensionId.apply
+  [28] akka.actor.ExtensionId.apply$
+  [29] akka.util.ManifestInfo$.apply
+  [30] akka.actor.ActorSystemImpl.liftedTree2$1
+  [31] akka.actor.ActorSystemImpl._start$lzycompute
+  [32] akka.actor.ActorSystemImpl._start
+  [33] akka.actor.ActorSystemImpl.start
+  [34] akka.actor.ActorSystem$.apply
+  [35] akka.actor.ActorSystem$.apply
+  [36] akka.actor.ActorSystem$.apply
+  [37] io.gatling.app.Gatling$.start
+  [38] io.gatling.app.Gatling$.fromArgs
+  [39] io.gatling.sbt.GatlingTask.liftedTree1$1
+  [40] io.gatling.sbt.GatlingTask.execute
+  [41] sbt.ForkMain$Run.lambda$runTest$1
+  [42] sbt.ForkMain$Run$$Lambda$10.985032587.call
+  [43] java.util.concurrent.FutureTask.run
+  [44] java.util.concurrent.ThreadPoolExecutor.runWorker
+  [45] java.util.concurrent.ThreadPoolExecutor$Worker.run
+  [46] java.lang.Thread.run
+  [47] [pool-4-thread-1 tid=43523]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28163]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] RegMask::overlap(RegMask const&) const
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=33539]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29443]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 1] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 2] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 3] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 4] Compile::Optimize()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28419]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=30467]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] java.util.concurrent.ThreadPoolExecutor.runWorker
+  [ 1] [unknown]
+  [ 2] java.lang.Thread.run
+  [ 3] [dd-cleaner tid=25859]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Node::rematerialize() const
+  [ 1] PhaseChaitin::Split(unsigned int, ResourceArea*)
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=29443]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::Select()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::next()
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28163]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] RegMask::overlap(RegMask const&) const
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=35075]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::next()
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28419]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 1] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 2] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 3] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 4] Compile::Optimize()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=33539]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 1] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 2] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 3] Compile::Optimize()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=35075]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] __psynch_cvsignal
+  [ 1] os::PlatformEvent::unpark()
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] CompileQueue::get()
+  [ 5] CompileBroker::compiler_thread_loop()
+  [ 6] JavaThread::thread_main_inner()
+  [ 7] JavaThread::run()
+  [ 8] java_start(Thread*)
+  [ 9] _pthread_start
+  [10] thread_start
+  [11] [tid=28419]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] G1ParScanThreadState::trim_queue()
+  [ 1] G1ParEvacuateFollowersClosure::do_void()
+  [ 2] G1ParTask::work(unsigned int)
+  [ 3] GangWorker::loop()
+  [ 4] java_start(Thread*)
+  [ 5] _pthread_start
+  [ 6] thread_start
+  [ 7] [tid=5379]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] Monitor::IWait(Thread*, long)
+  [ 3] Monitor::wait(bool, long, bool)
+  [ 4] VMThread::loop()
+  [ 5] VMThread::run()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=16131]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29443]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+  [ 2] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=35075]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 1] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 2] G1ParScanThreadState::trim_queue()
+  [ 3] G1ParEvacuateFollowersClosure::do_void()
+  [ 4] G1ParTask::work(unsigned int)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=10499]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::is_dominator(Node*, Node*)
+  [ 1] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 2] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 3] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 4] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 5] Compile::Optimize()
+  [ 6] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 7] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 8] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 9] CompileBroker::compiler_thread_loop()
+  [10] JavaThread::thread_main_inner()
+  [11] JavaThread::run()
+  [12] java_start(Thread*)
+  [13] _pthread_start
+  [14] thread_start
+  [15] [tid=34563]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::build_loop_tree()
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] oopDesc::size()
+  [ 1] CMTask::make_reference_grey(oopDesc*, HeapRegion*)
+  [ 2] InstanceKlass::oop_oop_iterate_nv(oopDesc*, G1CMOopClosure*)
+  [ 3] CMTask::scan_object(oopDesc*)
+  [ 4] CMBitMapClosure::do_bit(unsigned long)
+  [ 5] CMBitMapRO::iterate(BitMapClosure*, MemRegion)
+  [ 6] CMTask::do_marking_step(double, bool, bool)
+  [ 7] CMConcurrentMarkingTask::work(unsigned int)
+  [ 8] GangWorker::loop()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=17155]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseChaitin::post_allocate_copy_removal()
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=33539]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseAggressiveCoalesce::insert_copies(Matcher&)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] [not_walkable_Java]
+  [ 1] [avro-user-benchs-app-a0e99b10-468d-40ce-977e-4e9ab1fc4786-StreamThread-1 tid=83971]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] __gettimeofday
+  [ 1] Parker::park(bool, long)
+  [ 2] Unsafe_Park
+  [ 3] sun.misc.Unsafe.park
+  [ 4] java.util.concurrent.locks.LockSupport.parkNanos
+  [ 5] com.lmax.disruptor.SleepingWaitStrategy.applyWaitMethod
+  [ 6] com.lmax.disruptor.SleepingWaitStrategy.waitFor
+  [ 7] com.lmax.disruptor.ProcessingSequenceBarrier.waitFor
+  [ 8] com.lmax.disruptor.BatchEventProcessor.processEvents
+  [ 9] com.lmax.disruptor.BatchEventProcessor.run
+  [10] java.lang.Thread.run
+  [11] [dd-trace-disruptor tid=36355]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseIFG::remove_node(unsigned int)
+  [ 2] PhaseChaitin::Simplify()
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=34563]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseIFG::SquareUp()
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28419]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] InstanceKlass::oop_oop_iterate_backwards_nv(oopDesc*, G1ParScanClosure*)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=6147]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park(long)
+  [ 2] ObjectMonitor::wait(long, bool, Thread*)
+  [ 3] ObjectSynchronizer::wait(Handle, long, Thread*)
+  [ 4] JVM_MonitorWait
+  [ 5] java.lang.Object.wait
+  [ 6] org.apache.kafka.clients.consumer.internals.AbstractCoordinator$HeartbeatThread.run
+  [ 7] [kafka-coordinator-heartbeat-thread | avro-user-benchs-app tid=48643]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::build_loop_early(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=34563]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] RegMask::smear_to_sets(int)
+  [ 1] PhaseChaitin::build_ifg_physical(ResourceArea*)
+  [ 2] PhaseChaitin::Register_Allocate()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28163]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+  [ 1] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 2] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 3] G1ParScanThreadState::trim_queue()
+  [ 4] G1ParEvacuateFollowersClosure::do_void()
+  [ 5] G1ParTask::work(unsigned int)
+  [ 6] GangWorker::loop()
+  [ 7] java_start(Thread*)
+  [ 8] _pthread_start
+  [ 9] thread_start
+  [10] [tid=7171]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSet::insert(unsigned int)
+  [ 1] PhaseLive::add_liveout(Block*, IndexSet*, VectorSet&)
+  [ 2] PhaseLive::compute(unsigned int)
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=33539]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Arena::contains(void const*) const
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=29187]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] __psynch_cvwait
+  [ 1] os::PlatformEvent::park()
+  [ 2] ParkCommon(ParkEvent*, long)
+  [ 3] Monitor::IWait(Thread*, long)
+  [ 4] Monitor::wait(bool, long, bool)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=9219]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+  [ 1] PhaseIdealLoop::build_loop_late_post(Node*)
+  [ 2] PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+  [ 3] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 4] Compile::Optimize()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] IndexSetIterator::advance_and_next()
+  [ 1] PhaseIFG::remove_node(unsigned int)
+  [ 2] PhaseChaitin::Simplify()
+  [ 3] PhaseChaitin::Register_Allocate()
+  [ 4] Compile::Code_Gen()
+  [ 5] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 6] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 7] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 8] CompileBroker::compiler_thread_loop()
+  [ 9] JavaThread::thread_main_inner()
+  [10] JavaThread::run()
+  [11] java_start(Thread*)
+  [12] _pthread_start
+  [13] thread_start
+  [14] [tid=29443]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] SpinPause
+  [ 1] G1ParEvacuateFollowersClosure::do_void()
+  [ 2] ReferenceProcessor::process_phase3(DiscoveredList&, bool, BoolObjectClosure*, OopClosure*, VoidClosure*)
+  [ 3] G1STWRefProcTaskProxy::work(unsigned int)
+  [ 4] GangWorker::loop()
+  [ 5] java_start(Thread*)
+  [ 6] _pthread_start
+  [ 7] thread_start
+  [ 8] [tid=5379]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::build_loop_early(VectorSet&, Node_List&, Node_Stack&)
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28931]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+  [ 1] void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+  [ 2] G1ParScanThreadState::trim_queue()
+  [ 3] G1ParEvacuateFollowersClosure::do_void()
+  [ 4] G1ParTask::work(unsigned int)
+  [ 5] GangWorker::loop()
+  [ 6] java_start(Thread*)
+  [ 7] _pthread_start
+  [ 8] thread_start
+  [ 9] [tid=9731]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseLive::compute(unsigned int)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=35075]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] Matcher::match_tree(Node const*)
+  [ 1] Matcher::xform(Node*, int)
+  [ 2] Matcher::match()
+  [ 3] Compile::Code_Gen()
+  [ 4] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 5] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 6] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 7] CompileBroker::compiler_thread_loop()
+  [ 8] JavaThread::thread_main_inner()
+  [ 9] JavaThread::run()
+  [10] java_start(Thread*)
+  [11] _pthread_start
+  [12] thread_start
+  [13] [tid=28163]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseIdealLoop::Dominators()
+  [ 1] PhaseIdealLoop::build_and_optimize(bool, bool)
+  [ 2] Compile::Optimize()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=28419]
+
+--- 30000000 ns (0.06%), 3 samples
+  [ 0] PhaseChaitin::gather_lrg_masks(bool)
+  [ 1] PhaseChaitin::Register_Allocate()
+  [ 2] Compile::Code_Gen()
+  [ 3] Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)
+  [ 4] C2Compiler::compile_method(ciEnv*, ciMethod*, int)
+  [ 5] CompileBroker::invoke_compiler_on_method(CompileTask*)
+  [ 6] CompileBroker::compiler_thread_loop()
+  [ 7] JavaThread::thread_main_inner()
+  [ 8] JavaThread::run()
+  [ 9] java_start(Thread*)
+  [10] _pthread_start
+  [11] thread_start
+  [12] [tid=29187]
+
+          ns  percent  samples  top
+  ----------  -------  -------  ---
+  2990000000    6.11%      299  __psynch_cvwait
+  2040000000    4.17%      204  JNIMethodBlock::add_method(Method*)
+  1220000000    2.49%      122  IndexSetIterator::advance_and_next()
+  1070000000    2.19%      107  PhaseIdealLoop::idom_no_update(Node*) const
+   850000000    1.74%       85  IndexSet::insert(unsigned int)
+   730000000    1.49%       73  PhaseChaitin::Split(unsigned int, ResourceArea*)
+   680000000    1.39%       68  IndexSetIterator::next()
+   660000000    1.35%       66  SpinPause
+   550000000    1.12%       55  _platform_memmove$VARIANT$Haswell
+   520000000    1.06%       52  Copy::pd_disjoint_words(HeapWord*, HeapWord*, unsigned long)
+   500000000    1.02%       50  kevent
+   470000000    0.96%       47  PhaseAggressiveCoalesce::insert_copies(Matcher&)
+   440000000    0.90%       44  PhaseChaitin::build_ifg_physical(ResourceArea*)
+   440000000    0.90%       44  PhaseChaitin::gather_lrg_masks(bool)
+   410000000    0.84%       41  _platform_bzero$VARIANT$Haswell
+   400000000    0.82%       40  RegMask::overlap(RegMask const&) const
+   400000000    0.82%       40  writev
+   370000000    0.76%       37  PhaseLive::compute(unsigned int)
+   360000000    0.74%       36  [unknown_Java]
+   340000000    0.69%       34  G1ParScanThreadState::copy_to_survivor_space(InCSetState, oopDesc*, markOopDesc*)
+   340000000    0.69%       34  Arena::contains(void const*) const
+   340000000    0.69%       34  PhaseIdealLoop::is_dominator(Node*, Node*)
+   330000000    0.67%       33  oopDesc::size()
+   330000000    0.67%       33  PhaseChaitin::post_allocate_copy_removal()
+   330000000    0.67%       33  java.lang.String.substring
+   320000000    0.65%       32  SymbolTable::lookup(int, char const*, int, unsigned int)
+   300000000    0.61%       30  itable stub
+   300000000    0.61%       30  PhaseIdealLoop::dom_depth(Node*) const
+   260000000    0.53%       26  Block::end_idx() const
+   250000000    0.51%       25  PhaseIdealLoop::build_loop_late(VectorSet&, Node_List&, Node_Stack&)
+   250000000    0.51%       25  binary_search(Array<Method*>*, Symbol*)
+   230000000    0.47%       23  VectorSet::test_set(unsigned int)
+   230000000    0.47%       23  __psynch_cvsignal
+   230000000    0.47%       23  DIR_Chunk::find_match(GrowableArray<DIR_Chunk*>*, int, DebugInformationRecorder*)
+   230000000    0.47%       23  PhaseIdealLoop::Dominators()
+   230000000    0.47%       23  java.lang.String.<init>
+   220000000    0.45%       22  PhaseIdealLoop::build_loop_early(VectorSet&, Node_List&, Node_Stack&)
+   220000000    0.45%       22  IndexSetIterator::IndexSetIterator(IndexSet*)
+   220000000    0.45%       22  ZIP_GetEntry2
+   220000000    0.45%       22  PhaseChaitin::elide_copy(Node*, int, Block*, Node_List&, Node_List&, bool)
+   210000000    0.43%       21  pthread_getspecific
+   200000000    0.41%       20  PhaseIdealLoop::get_late_ctrl(Node*, Node*)
+   200000000    0.41%       20  IndexSet::initialize(unsigned int)
+   200000000    0.41%       20  RegMask::Size() const
+   190000000    0.39%       19  Compile::BuildOopMaps()
+   170000000    0.35%       17  Dict::Insert(void*, void*, bool)
+   170000000    0.35%       17  InstanceKlass::clean_method_data(BoolObjectClosure*)
+   170000000    0.35%       17  net.bytebuddy.pool.TypePool$Default$LazyTypeDescription$LazyMethodDescription.<init>
+   170000000    0.35%       17  G1ParScanThreadState::trim_queue()
+   160000000    0.33%       16  void G1ParScanThreadState::do_oop_evac<unsigned int>(unsigned int*, HeapRegion*)
+   160000000    0.33%       16  si_module_static_search.search_vtable
+   160000000    0.33%       16  java.util.Arrays.copyOfRange
+   150000000    0.31%       15  PhaseIdealLoop::build_loop_tree()
+   150000000    0.31%       15  read
+   150000000    0.31%       15  java.lang.String.indexOf
+   140000000    0.29%       14  PhaseIdealLoop::has_node(Node*) const
+   140000000    0.29%       14  jshort_disjoint_arraycopy
+   130000000    0.27%       13  Dictionary::get_entry(int, unsigned int, Symbol*, ClassLoaderData*)
+   130000000    0.27%       13  InstanceKlass::oop_oop_iterate_nv(oopDesc*, G1CMOopClosure*)
+   130000000    0.27%       13  Matcher::find_shared(Node*)
+   120000000    0.25%       12  IndexSet::alloc_block()
+   120000000    0.25%       12  Node::del_out(Node*)
+   120000000    0.25%       12  Arena::Amalloc(unsigned long, AllocFailStrategy::AllocFailEnum)
+   120000000    0.25%       12  RegMask::smear_to_sets(int)
+   110000000    0.22%       11  net.bytebuddy.jar.asm.Type.<init>
+   110000000    0.22%       11  CodeHeap::find_start(void*) const
+   110000000    0.22%       11  zError
+   110000000    0.22%       11  PhaseIdealLoop::build_loop_late_post(Node*)
+   110000000    0.22%       11  java.util.concurrent.ConcurrentLinkedQueue$Node.casItem
+   110000000    0.22%       11  PhaseIdealLoop::get_loop(Node*) const
+   100000000    0.20%       10  void G1ParScanThreadState::push_on_queue<unsigned int>(unsigned int*)
+   100000000    0.20%       10  CMTask::make_reference_grey(oopDesc*, HeapRegion*)
+   100000000    0.20%       10  InstanceKlass::oop_oop_iterate_backwards_nv(oopDesc*, G1ParScanClosure*)
+   100000000    0.20%       10  CodeHeap::search_freelist(unsigned long, bool)
+   100000000    0.20%       10  PhaseIFG::effective_degree(unsigned int) const
+   100000000    0.20%       10  void G1ParScanClosure::do_oop_nv<unsigned int>(unsigned int*)
+   100000000    0.20%       10  stat64
+   100000000    0.20%       10  __psynch_mutexwait
+    90000000    0.18%        9  IndexSet::remove(unsigned int)
+    90000000    0.18%        9  PhaseLive::add_liveout(Block*, IndexSet*, VectorSet&)
+    90000000    0.18%        9  Node_Backward_Iterator::next()
+    90000000    0.18%        9  PhaseIdealLoop::get_ctrl_no_update(Node*) const
+    90000000    0.18%        9  NodeHash::hash_delete(Node const*)
+    90000000    0.18%        9  MergeMemNode::Ideal(PhaseGVN*, bool)
+    90000000    0.18%        9  [not_walkable_Java]
+    90000000    0.18%        9  Node::dominates(Node*, Node_List&)
+    90000000    0.18%        9  _res
+    90000000    0.18%        9  PhaseIdealLoop::get_ctrl(Node*)
+    90000000    0.18%        9  Symbol::equals(char const*, int) const
+    80000000    0.16%        8  PhaseCFG::schedule_local(Block*, GrowableArray<int>&, VectorSet&)
+    80000000    0.16%        8  akka.actor.LightArrayRevolverScheduler$$anon$3.nextTick
+    80000000    0.16%        8  MachNode::rematerialize() const
+    80000000    0.16%        8  net.bytebuddy.pool.TypePool$Default$LazyTypeDescription$MethodTokenList.get
+    80000000    0.16%        8  ThreadStateTransition::trans_and_fence(JavaThreadState, JavaThreadState)
+    80000000    0.16%        8  SymbolTable::buckets_unlink(int, int, BasicHashtable<(MemoryType)9>::BucketUnlinkContext*, unsigned long*)
+    80000000    0.16%        8  NodeHash::hash_find_insert(Node*)
+    80000000    0.16%        8  net.bytebuddy.jar.asm.Type.getTypeInternal
+    80000000    0.16%        8  resource_allocate_bytes(unsigned long, AllocFailStrategy::AllocFailEnum)
+    80000000    0.16%        8  os::javaTimeNanos()
+    80000000    0.16%        8  PhaseIdealLoop::split_if_with_blocks(VectorSet&, Node_Stack&)
+    80000000    0.16%        8  PhaseChaitin::Select()
+    80000000    0.16%        8  java.lang.String.hashCode
+    70000000    0.14%        7  NTarjan::DFS(NTarjan*, VectorSet&, PhaseIdealLoop*, unsigned int*)
+    70000000    0.14%        7  PhiNode::Value(PhaseTransform*) const
+    70000000    0.14%        7  PhaseCCP::analyze()
+    70000000    0.14%        7  Node_List::push(Node*)
+    70000000    0.14%        7  Node::add_out(Node*)
+    70000000    0.14%        7  java.lang.ref.SoftReference.get
+    70000000    0.14%        7  IndexSet::IndexSet(IndexSet*)
+    70000000    0.14%        7  Matcher::match_tree(Node const*)
+    60000000    0.12%        6  PhaseChaitin::Simplify()
+    60000000    0.12%        6  Unique_Node_List::push(Node*)
+    60000000    0.12%        6  java.util.ArrayList.<init>
+    60000000    0.12%        6  CProjNode::is_block_proj() const
+    60000000    0.12%        6  [unknown]
+    60000000    0.12%        6  Type::cmp(Type const*, Type const*)
+    60000000    0.12%        6  ThreadStateTransition::trans_from_native(JavaThreadState)
+    60000000    0.12%        6  java.util.HashMap.getNode
+    60000000    0.12%        6  klassVtable::add_new_mirandas_to_lists(GrowableArray<Method*>*, GrowableArray<Method*>*, Array<Method*>*, Array<Method*>*, Array<Method*>*, Klass*)
+    60000000    0.12%        6  write
+    60000000    0.12%        6  __block_descriptor_tmp
+    60000000    0.12%        6  StringTable::buckets_oops_do(OopClosure*, int, int)
+    60000000    0.12%        6  Unique_Node_List::remove(Node*)
+    60000000    0.12%        6  __gettimeofday
+    60000000    0.12%        6  Matcher::xform(Node*, int)
+    60000000    0.12%        6  RegMask::SUBTRACT(RegMask const&)
+    60000000    0.12%        6  RegMask::is_UP() const
+    60000000    0.12%        6  java.util.concurrent.ConcurrentLinkedQueue.poll
+    60000000    0.12%        6  VectorSet::set(unsigned int)
+    60000000    0.12%        6  net.bytebuddy.jar.asm.Type.getArgumentTypes
+    60000000    0.12%        6  java.util.ArrayList$Itr.next
+    60000000    0.12%        6  GrowableArray<Metadata*>::remove_at(int)
+    60000000    0.12%        6  [not_walkable]
+    60000000    0.12%        6  PhaseChaitin::interfere_with_live(unsigned int, IndexSet*)
+    60000000    0.12%        6  net.bytebuddy.pool.TypePool$Default$LazyTypeDescription$MethodToken.toMethodDescription
+    60000000    0.12%        6  Node::rematerialize() const
+    60000000    0.12%        6  void G1ParScanThreadState::update_rs<unsigned int>(HeapRegion*, unsigned int*, int)
+    50000000    0.10%        5  Node::pinned() const
+    50000000    0.10%        5  ObjArrayKlass::oop_oop_iterate_nv(oopDesc*, G1CMOopClosure*)
+    50000000    0.10%        5  net.bytebuddy.pool.TypePool$Default$LazyTypeDescription$GenericTypeToken$LazyTokenList.<init>
+    50000000    0.10%        5  Compile::identify_useful_nodes(Unique_Node_List&)
+    50000000    0.10%        5  java.lang.String.charAt
+    50000000    0.10%        5  RegMask::is_bound1() const
+    50000000    0.10%        5  com.google.common.cache.LocalCache$AccessQueue$1.setPreviousInAccessQueue
+    50000000    0.10%        5  PhaseIdealLoop::build_loop_tree_impl(Node*, int)
+    50000000    0.10%        5  Compile::final_graph_reshaping_walk(Node_Stack&, Node*, Final_Reshape_Counts&)
+    50000000    0.10%        5  G1KlassScanClosure::do_klass(Klass*)
+    50000000    0.10%        5  Compile::find_alias_type(TypePtr const*, bool, ciField*)
+    50000000    0.10%        5  itable stub
+    50000000    0.10%        5  itable stub
+    50000000    0.10%        5  Compile::remove_speculative_types(PhaseIterGVN&)
+    50000000    0.10%        5  IntervalWalker::append_sorted(Interval**, Interval*)
+    50000000    0.10%        5  MultiNode::is_CFG() const
+    50000000    0.10%        5  Node::find_exact_control(Node*)
+    50000000    0.10%        5  PhaseIdealLoop::has_local_phi_input(Node*)
+    50000000    0.10%        5  rcmd_af.canonnamebuf
+    50000000    0.10%        5  RelocIterator::next()
+    50000000    0.10%        5  net.bytebuddy.jar.asm.Type.getDescriptor
+    50000000    0.10%        5  IntervalWalker::walk_to(IntervalState, int)
+    50000000    0.10%        5  PhaseChaitin::build_ifg_virtual()
+    50000000    0.10%        5  __lseek
+    50000000    0.10%        5  sun.security.provider.SHA2.implCompress0
+    50000000    0.10%        5  LRG::compute_degree(LRG&) const
+    40000000    0.08%        4  Metaspace::allocate(ClassLoaderData*, unsigned long, bool, MetaspaceObj::Type, Thread*)
+    40000000    0.08%        4  Node::clone() const
+    40000000    0.08%        4  Arena::grow(unsigned long, AllocFailStrategy::AllocFailEnum)
+    40000000    0.08%        4  RegionNode::is_unreachable_region(PhaseGVN*) const
+    40000000    0.08%        4  tiny_malloc_from_free_list
+    40000000    0.08%        4  Node::add_req(Node*)
+    40000000    0.08%        4  CMTask::scan_object(oopDesc*)
+    40000000    0.08%        4  Unique_Node_List::pop()
+    40000000    0.08%        4  RegMask::is_misaligned_pair() const
+    40000000    0.08%        4  IndexSet::populate_free_list()
+    40000000    0.08%        4  IfNode::Ideal(PhaseGVN*, bool)
+    40000000    0.08%        4  NTarjan::LINK(NTarjan*, NTarjan*)
+    40000000    0.08%        4  Arena::Arealloc(void*, unsigned long, unsigned long, AllocFailStrategy::AllocFailEnum)
+    40000000    0.08%        4  java.util.ArrayList$Itr.hasNext
+    40000000    0.08%        4  Compile::fill_buffer(CodeBuffer*, unsigned int*)
+    40000000    0.08%        4  PhaseIterGVN::subsume_node(Node*, Node*)
+    40000000    0.08%        4  IndexSet::alloc_block_containing(unsigned int)
+    40000000    0.08%        4  ValueStack::apply(Values, ValueVisitor*)
+    40000000    0.08%        4  Monitor::TryFast()
+    40000000    0.08%        4  net.bytebuddy.description.type.TypeDescription$Generic$OfParameterizedType.findBindingOf
+    40000000    0.08%        4  HeapRegion::oops_on_card_seq_iterate_careful(MemRegion, FilterOutOfRegionClosure*, bool, signed char*)
+    40000000    0.08%        4  RegMask::find_first_elem() const
+    40000000    0.08%        4  IndexSet::free_block(unsigned int)
+    40000000    0.08%        4  ciObjectFactory::find(Metadata*, GrowableArray<ciMetadata*>*)
+    40000000    0.08%        4  Parse::do_one_bytecode()
+    40000000    0.08%        4  com.google.common.cache.LocalCache$Segment.getEntry
+    40000000    0.08%        4  net.bytebuddy.matcher.StringMatcher.matches
+    40000000    0.08%        4  TypeInstPtr::eq(Type const*) const
+    40000000    0.08%        4  ScopeDesc::sender() const
+    40000000    0.08%        4  java.util.Objects.equals
+    40000000    0.08%        4  itable stub
+    40000000    0.08%        4  HandleMarkCleaner::~HandleMarkCleaner()
+    40000000    0.08%        4  GrowableArray<unsigned int>::GrowableArray(Arena*, int, int, unsigned int const&)
+    40000000    0.08%        4  PhaseCFG::schedule_late(VectorSet&, Node_List&)
+    40000000    0.08%        4  PhaseIterGVN::PhaseIterGVN(PhaseGVN*)
+    40000000    0.08%        4  com.google.common.cache.LocalCache$Segment.runLockedCleanup
+    40000000    0.08%        4  datadog.trace.agent.tooling.ByteBuddyElementMatchers$SafeMatcher.matches
